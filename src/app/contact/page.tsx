@@ -1,11 +1,11 @@
 import Layout from '@/components/layout/Layout';
-import HomeSection from '@/components/sections/HomeSection';
+import ContactSection from '@/components/sections/ContactSection';
 
-export default function Home() {
+export default function Contact() {
   return (
     <Layout>
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <HomeSection isActive={true} />
+        <ContactSection isActive={true} />
       </div>
     </Layout>
   );

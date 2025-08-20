@@ -1,26 +1,251 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #F8F7F4;
+  --foreground: #333333;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #F8F7F4;
+  color: #333;
+}
+
+/* Custom styles from original HTML */
+.bg-F8F7F4 {
+  background-color: #F8F7F4 !important;
+}
+
+.nav-link, .nav-sub-link {
+  cursor: pointer;
+  transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+.nav-link.active, .nav-sub-link.active {
+  color: #D946EF;
+  border-bottom: 2px solid;
+  border-image: linear-gradient(to right, 
+    #ff0000,    /* Red */
+    #ff8000,    /* Orange */
+    /* #0080ff,    Blue */
+    #8000ff,    /* Purple */
+    #ff0080     /* Pink */
+  ) 1;
+}
+
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+.card, .tile, .path-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover, .tile:hover, .path-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -2px rgba(0,0,0,.05);
+}
+
+/* Custom column span */
+.col-span-1\.5 {
+  grid-column: span 1.5 / span 1.5;
+}
+
+/* Custom container width */
+.custom-container {
+  max-width: 72rem; /* 1152px - equivalent to max-w-6xl */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-background {
+  background-image: linear-gradient(to right, 
+    rgba(255, 0, 0, 0.3),    /* Red */
+    rgba(255, 165, 0, 0.3),  /* Orange */
+    rgba(255, 255, 0, 0.3),  /* Yellow */
+    rgba(0, 255, 0, 0.3),    /* Green */
+    rgba(0, 0, 255, 0.3),    /* Blue */
+    rgba(75, 0, 130, 0.3),   /* Indigo */
+    rgba(238, 130, 238, 0.3) /* Violet */
+  ), url('/SPNC RFAC.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .4rem .75rem;
+  border-radius: 9999px;
+  background: #f3e8ff;
+  color: #7c3aed;
+  font-weight: 600;
+  font-size: .875rem;
+  cursor: pointer;
+  transition: background-color .2s, color .2s;
+}
+
+.chip:hover {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+/* Map styles */
+.map-shell {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 360px 1fr;
+}
+
+@media (max-width: 1024px) {
+  .map-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+.map-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 10px 30px -10px rgba(17,24,39,.15);
+}
+
+.map-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.map-canvas {
+  height: 560px;
+  border-radius: .75rem;
+  border: 1px solid #e5e7eb;
+  background:
+    radial-gradient(1200px 600px at 50% 10%, rgba(217,70,239,.08), transparent 60%),
+    radial-gradient(900px 500px at 10% 100%, rgba(59,130,246,.08), transparent 60%),
+    #fafafa;
+  position: relative;
+}
+
+.legend-badge {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+.legend-social { background: #60a5fa; }
+.legend-health { background: #22c55e; }
+.legend-housing { background: #f59e0b; }
+.legend-advocacy { background: #f472b6; }
+
+.map-tool {
+  width: 42px;
+  height: 42px;
+  border-radius: .5rem;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+}
+
+.map-tool:focus {
+  outline: 3px solid rgba(217,70,239,.35);
+  outline-offset: 2px;
+}
+
+.map-callout {
+  position: absolute;
+  min-width: 260px;
+  max-width: 300px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  color: #111827;
+  border-radius: .75rem;
+  padding: .75rem .85rem;
+  box-shadow: 0 18px 40px rgba(0,0,0,.12);
+  z-index: 6;
+  transform: translate(-50%, -110%);
+}
+
+.map-marker {
+  cursor: pointer;
+  transition: transform .15s ease;
+}
+
+.map-marker:hover {
+  transform: scale(1.06);
+}
+
+.results-list {
+  max-height: 34vh;
+  overflow: auto;
+}
+
+.results-item:hover {
+  background: #faf5ff;
+}
+
+/* Carousel styles */
+.carousel {
+  position: relative;
+}
+
+.carousel-slide {
+  opacity: 0;
+  transform: translateX(10%);
+  transition: opacity .4s ease, transform .4s ease;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.carousel-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: #f9f9f9;
+}
+
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #e5e7eb;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.carousel-indicators button.active {
+  background: #D946EF;
+}
+
+.carousel-indicators button:hover {
+  background: #c084fc;
 }

@@ -1,11 +1,11 @@
 import Layout from '@/components/layout/Layout';
-import HomeSection from '@/components/sections/HomeSection';
+import DonateSection from '@/components/sections/DonateSection';
 
-export default function Home() {
+export default function Donate() {
   return (
     <Layout>
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <HomeSection isActive={true} />
+        <DonateSection isActive={true} />
       </div>
     </Layout>
   );

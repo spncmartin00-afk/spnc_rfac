@@ -1,11 +1,11 @@
 import Layout from '@/components/layout/Layout';
-import HomeSection from '@/components/sections/HomeSection';
+import ResourcesSection from '@/components/sections/ResourcesSection';
 
-export default function Home() {
+export default function Resources() {
   return (
     <Layout>
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <HomeSection isActive={true} />
+        <ResourcesSection isActive={true} />
       </div>
     </Layout>
   );

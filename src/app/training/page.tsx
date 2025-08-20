@@ -1,11 +1,11 @@
 import Layout from '@/components/layout/Layout';
-import HomeSection from '@/components/sections/HomeSection';
+import ServicesSection from '@/components/sections/ServicesSection';
 
-export default function Home() {
+export default function Training() {
   return (
     <Layout>
       <div className="max-w-6xl mx-auto px-6 py-12">
-        <HomeSection isActive={true} />
+        <ServicesSection isActive={true} />
       </div>
     </Layout>
   );
