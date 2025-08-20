@@ -53,10 +53,14 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
       <div className="hero-background bg-white px-48 py-40 rounded-1xl shadow-lg text-center relative overflow-hidden">
 
         <div className="relative z-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg" style={{
+            textShadow: '2px 2px 4px rgba(0,0,0,0.7)'
+          }}>
             Senior Pride Network Canada
           </h1>
-          <p className="text-lg text-white max-w-3xl mx-auto">
+          <p className="text-lg text-white max-w-3xl mx-auto drop-shadow-md" style={{
+            textShadow: '1px 1px 3px rgba(0,0,0,0.6)'
+          }}>
             Connecting 2SLGBTQI+ older people and the organizations that serve them — so every elder can live with dignity, safety, and connection anywhere in Canada.
           </p>
         </div>

@@ -81,6 +81,8 @@ body {
   ), url('/SPNC RFAC.png');
   background-size: cover;
   background-position: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .chip {
