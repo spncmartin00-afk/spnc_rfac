@@ -77,7 +77,7 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
               Explore Resources →
             </span>
           </Link>
-          <Link href="/frontline" className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer hover:shadow-lg transition-shadow duration-200 block">
+          <Link href="/resources/frontline" className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer hover:shadow-lg transition-shadow duration-200 block">
             <div className="mb-4 flex justify-center">
               <HandHeart className="w-12 h-12 icon-gradient" />
             </div>
@@ -86,7 +86,7 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
               Explore Resources →
             </span>
           </Link>
-          <Link href="/seniors" className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer hover:shadow-lg transition-shadow duration-200 block">
+          <Link href="/resources/seniors" className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer hover:shadow-lg transition-shadow duration-200 block">
             <div className="mb-4 flex justify-center">
               <Rainbow className="w-12 h-12 icon-gradient" />
             </div>
