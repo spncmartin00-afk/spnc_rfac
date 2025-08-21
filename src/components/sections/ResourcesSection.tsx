@@ -17,6 +17,7 @@ import {
   faLightbulb,
   faNetworkWired
 } from '@fortawesome/free-solid-svg-icons';
+import { Settings, HandHeart, Rainbow, Home, Heart, Search } from 'lucide-react';
 
 interface ResourcesSectionProps {
   isActive: boolean;
@@ -25,13 +26,6 @@ interface ResourcesSectionProps {
 export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
   const [activeSubSection, setActiveSubSection] = useState('landing');
 
-  const subSections = [
-    { id: 'landing', label: 'Landing Page' },
-    { id: 'frontline', label: 'Frontline Workers' },
-    { id: 'allied', label: 'Allied Orgs' },
-    { id: 'seniors', label: 'Seniors' },
-    { id: 'map', label: 'Community Map' }
-  ];
 
   return (
     <section className={`section ${isActive ? 'active' : ''}`}>
@@ -44,55 +38,49 @@ export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
         </p>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4 mt-8">
-        {subSections.map((section) => (
-          <button
-            key={section.id}
-            onClick={() => setActiveSubSection(section.id)}
-            className={`nav-sub-link border-b-2 border-transparent pb-1 text-lg ${
-              activeSubSection === section.id ? 'active' : ''
-            }`}
-          >
-            {section.label}
-          </button>
-        ))}
-      </div>
-
       {/* Landing Page */}
       {activeSubSection === 'landing' && (
         <div className="mt-12 grid md:grid-cols-4 gap-8">
-          <div 
-            className="card bg-white p-8 rounded-2xl text-center cursor-pointer"
-            onClick={() => setActiveSubSection('frontline')}
+          <Link 
+            href="/frontline"
+            className="card bg-white p-8 rounded-2xl text-center cursor-pointer hover:bg-gray-50 transition-colors"
           >
-            <div className="text-5xl mb-4">🛠️</div>
+            <div className="mb-4 flex justify-center">
+              <Settings className="w-12 h-12 icon-gradient" />
+            </div>
             <h3 className="text-2xl font-bold mb-2">For Frontline Organizations</h3>
             <p className="text-gray-600">Resources and tools to strengthen your work.</p>
-          </div>
-          <div 
-            className="card bg-white p-8 rounded-2xl text-center cursor-pointer"
-            onClick={() => setActiveSubSection('allied')}
+          </Link>
+          <Link 
+            href="/allied"
+            className="card bg-white p-8 rounded-2xl text-center cursor-pointer hover:bg-gray-50 transition-colors"
           >
-            <div className="text-5xl mb-4">🤝</div>
+            <div className="mb-4 flex justify-center">
+              <HandHeart className="w-12 h-12 icon-gradient" />
+            </div>
             <h3 className="text-2xl font-bold mb-2">For Allied Organizations</h3>
             <p className="text-gray-600">Guidance for building inclusive services.</p>
-          </div>
-          <div 
-            className="card bg-white p-8 rounded-2xl text-center cursor-pointer"
-            onClick={() => setActiveSubSection('seniors')}
+          </Link>
+          <Link 
+            href="/seniors"
+            className="card bg-white p-8 rounded-2xl text-center cursor-pointer hover:bg-gray-50 transition-colors"
           >
-            <div className="text-5xl mb-4">🌈</div>
+            <div className="mb-4 flex justify-center">
+              <Rainbow className="w-12 h-12 icon-gradient" />
+            </div>
             <h3 className="text-2xl font-bold mb-2">For Queer Seniors</h3>
             <p className="text-gray-600">Resources and support for your wellbeing.</p>
-          </div>
-          <div 
-            className="card bg-white p-8 rounded-2xl text-center cursor-pointer"
-            onClick={() => setActiveSubSection('map')}
+          </Link>
+          <Link 
+            href="/community-map"
+            className="card bg-white p-8 rounded-2xl text-center cursor-pointer hover:bg-gray-50 transition-colors"
           >
-            <div className="text-5xl mb-4">🔍</div>
+            <div className="mb-4 flex justify-center">
+              <Search className="w-12 h-12 icon-gradient" />
+            </div>
             <h3 className="text-2xl font-bold mb-2">Community Map</h3>
             <p className="text-gray-600">A powerful tool to find resources near you.</p>
-          </div>
+          </Link>
         </div>
       )}
 
@@ -141,9 +129,9 @@ export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
                 <p className="text-sm text-gray-600">Showcase your work via our directory and spotlight features.</p>
               </div>
             </div>
-            <a href="#" className="inline-block mt-6 bg-fuchsia-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-fuchsia-700">
+            <Link href="/frontline" className="inline-block mt-6 bg-fuchsia-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-fuchsia-700">
               Join Our Frontline Network
-            </a>
+            </Link>
           </div>
 
           <div className="text-center">
@@ -314,9 +302,9 @@ export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
             <p className="text-gray-700 max-w-3xl mx-auto">
               We invite you to actively review our guidelines for inclusive practices, integrate our resources into your operations, and share your own expertise to foster a more comprehensive and affirming landscape for all seniors in Canada.
             </p>
-            <a href="#" className="inline-block mt-2 bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700">
+            <Link href="/allied" className="inline-block mt-2 bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700">
               Become an Allied Member
-            </a>
+            </Link>
           </section>
           
           <div className="text-center">
@@ -341,154 +329,6 @@ export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
               </Link>
             </div>
           </div>
-
-          {/* Inclusion Guidance Section */}
-          <section className="space-y-6">
-            <h3 className="text-2xl font-bold">Inclusion Guidance for Allied Members</h3>
-            <p className="text-gray-700">
-              This section provides allied organizations with comprehensive guides and resources to integrate 2SLGBTQI+ inclusive practices into your existing services and programs for seniors. Our goal is to help you create truly affirming and welcoming environments.
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Inclusive Language Guide</h4>
-                <p className="text-sm text-gray-700">A practical guide to using respectful and affirming language in all communications.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">Download Guide →</a>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Facility & Program Accessibility Checklist</h4>
-                <p className="text-sm text-gray-700">Ensure your physical spaces and programs are welcoming to 2SLGBTQI+ seniors.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">View Checklist →</a>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Cultural Sensitivity Training Modules</h4>
-                <p className="text-sm text-gray-700">Access online modules for your staff on 2SLGBTQI+ cultural competency.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">Access Training →</a>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Case Studies in Affirming Care</h4>
-                <p className="text-sm text-gray-700">Examples of successful implementation of inclusive practices in senior care settings.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">Read Case Studies →</a>
-              </div>
-            </div>
-            <a href="#" className="inline-block mt-2 text-blue-700 font-semibold hover:text-blue-800">
-              Request Personalized Guidance →
-            </a>
-          </section>
-
-          {/* Increased Visibility Section */}
-          <section className="space-y-6">
-            <h3 className="text-2xl font-bold">Increased Visibility for Allied Members</h3>
-            <p className="text-gray-700">
-              Showcase your commitment to inclusive senior care and reach a wider audience of 2SLGBTQI+ seniors and their families by being featured in our Allied Member directory and promotional channels.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Premium Directory Listing</h4>
-                <p className="text-sm text-gray-700">Your organization will have a detailed and prominent listing in our public-facing Allied Member directory.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">Manage Your Listing →</a>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Newsletter Feature</h4>
-                <p className="text-sm text-gray-700">Opportunity to be featured in our monthly newsletter sent to our entire network.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">Submit for Feature →</a>
-              </div>
-            </div>
-            <a href="#" className="inline-block mt-2 text-blue-700 font-semibold hover:text-blue-800">
-              Learn More About Visibility Options →
-            </a>
-          </section>
-
-          {/* Collaboration Section */}
-          <section className="space-y-6">
-            <h3 className="text-2xl font-bold">Collaboration Opportunities for Allied Members</h3>
-            <p className="text-gray-700">
-              We invite allied organizations to collaborate with SPNC/RFAC and our frontline members on various initiatives. Partnership is key to expanding our collective impact and improving the lives of 2SLGBTQI+ seniors across Canada.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Joint Program Development</h4>
-                <p className="text-sm text-gray-700">Develop and implement new programs or services targeting 2SLGBTQI+ seniors.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">Propose a Partnership →</a>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Co-host Events & Webinars</h4>
-                <p className="text-sm text-gray-700">Partner with us to organize and promote events relevant to 2SLGBTQI+ aging.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">Suggest an Event →</a>
-              </div>
-            </div>
-            <a href="#" className="inline-block mt-2 text-blue-700 font-semibold hover:text-blue-800">
-              Discuss Collaboration Opportunities →
-            </a>
-          </section>
-
-          {/* Educational Resources Section */}
-          <section className="space-y-6">
-            <h3 className="text-2xl font-bold">Educational Resources for Allied Members</h3>
-            <p className="text-gray-700">
-              Access our specialized educational resources, including workshops and training modules, designed to enhance your team's understanding and capacity to serve 2SLGBTQI+ seniors with cultural competence and sensitivity.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">On-Demand Cultural Competency Training</h4>
-                <p className="text-sm text-gray-700">Self-paced modules covering history, terminology, and best practices in care.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">Access Training Modules →</a>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Upcoming Workshops & Webinars</h4>
-                <p className="text-sm text-gray-700">View our calendar of live sessions on specialized topics relevant to inclusive senior care.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">View Calendar →</a>
-              </div>
-            </div>
-            <a href="#" className="inline-block mt-2 text-blue-700 font-semibold hover:text-blue-800">
-              Explore Educational Opportunities →
-            </a>
-          </section>
-
-          {/* Contribute Expertise Section */}
-          <section className="space-y-6">
-            <h3 className="text-2xl font-bold">Contribute Your Expertise as an Allied Member</h3>
-            <p className="text-gray-700">
-              Your organization's expertise is invaluable. We encourage allied members to contribute their research, case studies, and innovative programs to enrich our shared knowledge base and benefit the entire community.
-            </p>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Submit Research & Publications</h4>
-                <p className="text-sm text-gray-700">Share your studies, reports, or articles relevant to 2SLGBTQI+ aging and care.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">Upload Research →</a>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Showcase Programs & Initiatives</h4>
-                <p className="text-sm text-gray-700">Feature your successful programs that positively impact 2SLGBTQI+ seniors.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">Submit Program Details →</a>
-              </div>
-            </div>
-            <a href="#" className="inline-block mt-2 text-blue-700 font-semibold hover:text-blue-800">
-              Contact Us to Contribute →
-            </a>
-          </section>
-
-          {/* National Network Access Section */}
-          <section className="space-y-6">
-            <h3 className="text-2xl font-bold">National Network Access for Allied Members</h3>
-            <p className="text-gray-700">
-              As an allied member, you gain access to a broader national network, staying informed on trends, policy developments, and collaborative opportunities that impact 2SLGBTQI+ aging across Canada.
-            </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">National Policy Updates</h4>
-                <p className="text-sm text-gray-700">Receive regular updates on federal and provincial policies impacting 2SLGBTQI+ seniors.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">View Policy Briefs →</a>
-              </div>
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold">Trends in Senior Care</h4>
-                <p className="text-sm text-gray-700">Gain insights into emerging trends and best practices in inclusive senior care across Canada.</p>
-                <a href="#" className="text-blue-600 text-sm font-semibold">Explore Resources →</a>
-              </div>
-            </div>
-            <a href="#" className="inline-block mt-2 text-blue-700 font-semibold hover:text-blue-800">
-              Join Our Network →
-            </a>
-          </section>
         </div>
       )}
 
@@ -504,17 +344,26 @@ export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="card bg-gray-50 p-6 rounded-xl">
-              <h3 className="text-xl font-bold mb-3">🏠 Housing & Living</h3>
+              <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+                <Home className="w-5 h-5 icon-gradient" />
+                Housing & Living
+              </h3>
               <p className="text-gray-600 mb-4">Find LGBTQI+ friendly housing options and know your rights.</p>
               <a href="#" className="text-fuchsia-600 font-semibold hover:text-fuchsia-800">Explore Resources →</a>
             </div>
             <div className="card bg-gray-50 p-6 rounded-xl">
-              <h3 className="text-xl font-bold mb-3">💙 Health & Wellness</h3>
+              <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+                <Heart className="w-5 h-5 icon-gradient" />
+                Health & Wellness
+              </h3>
               <p className="text-gray-600 mb-4">Access health resources and find inclusive healthcare providers.</p>
               <a href="#" className="text-fuchsia-600 font-semibold hover:text-fuchsia-800">Find Support →</a>
             </div>
             <div className="card bg-gray-50 p-6 rounded-xl">
-              <h3 className="text-xl font-bold mb-3">🤝 Community & Social</h3>
+              <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
+                <HandHeart className="w-5 h-5 icon-gradient" />
+                Community & Social
+              </h3>
               <p className="text-gray-600 mb-4">Connect with others and find social activities in your area.</p>
               <a href="#" className="text-fuchsia-600 font-semibold hover:text-fuchsia-800">Get Connected →</a>
             </div>

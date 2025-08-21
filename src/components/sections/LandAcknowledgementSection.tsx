@@ -9,6 +9,11 @@ export default function LandAcknowledgementSection({ isActive }: LandAcknowledge
     <section className={`section ${isActive ? 'active' : ''}`}>
       <div className="text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Land Acknowledgement</h1>
+        <img 
+          src="/feather.webp" 
+          alt="Rainbow feather symbolizing diversity and inclusion" 
+          className="mx-auto mb-6 w-100 h-40 object-contain"
+        />
       </div>
       
       <div className="mt-12 bg-white p-8 rounded-2xl">
@@ -18,12 +23,12 @@ export default function LandAcknowledgementSection({ isActive }: LandAcknowledge
             We recognize the ongoing impacts of colonization and commit to supporting Indigenous 2SLGBTQI+ Elders 
             and communities in our work.
           </p>
-          <p className="leading-relaxed">
+          <p className="text-lg leading-relaxed">
             As we work to create inclusive spaces for 2SLGBTQI+ older adults, we acknowledge the particular 
             challenges faced by Indigenous 2SLGBTQI+ Elders and commit to learning, listening, and supporting 
             reconciliation efforts.
           </p>
-          <p className="leading-relaxed">
+          <p className="text-lg leading-relaxed">
             We are committed to building respectful relationships with Indigenous communities and supporting 
             the self-determination of Indigenous 2SLGBTQI+ people.
           </p>

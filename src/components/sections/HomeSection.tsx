@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { Users, HandHeart, Rainbow } from 'lucide-react';
+import Link from 'next/link';
 
 interface HomeSectionProps {
   isActive: boolean;
@@ -53,53 +55,46 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
       <div className="hero-background bg-white px-48 py-40 rounded-1xl shadow-lg text-center relative overflow-hidden">
 
         <div className="relative z-10">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg" style={{
-            textShadow: '2px 2px 4px rgba(0,0,0,0.7)'
-          }}>
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg" >
             Senior Pride Network Canada
           </h1>
-          <p className="text-lg text-white max-w-3xl mx-auto drop-shadow-md" style={{
-            textShadow: '1px 1px 3px rgba(0,0,0,0.6)'
-          }}>
+          <p className="text-lg text-white max-w-4xl mx-auto drop-shadow-md" >
             Connecting 2SLGBTQI+ older people and the organizations that serve them — so every elder can live with dignity, safety, and connection anywhere in Canada.
           </p>
         </div>
       </div>
 
       {/* Path Cards */}
-      <div className="mt-16">
-        <h2 className="text-3xl font-bold text-center mb-10">We have resources for:</h2>
+      <div className="mt-8">
+        <h2 className="text-3xl font-bold text-center mb-8">We have resources for</h2>
         <div className="grid md:grid-cols-3 gap-8">
-          <div className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer">
-            <div className="text-5xl mb-4">🛠️</div>
+          <Link href="/allied" className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer hover:shadow-lg transition-shadow duration-200 block">
+            <div className="mb-4 flex justify-center">
+              <Users className="w-12 h-12 icon-gradient" />
+            </div>
             <h3 className="text-2xl font-bold mb-2">Organizations & Groups</h3>
-            <p className="text-gray-600">
-              Strengthen your programs with tailored resources, training, and peer connections focused on older 2SLGBTQI+ people.
-            </p>
-            <button className="mt-4 text-fuchsia-600 font-semibold hover:text-fuchsia-800">
+            <span className="mt-4 text-fuchsia-600 font-semibold hover:text-fuchsia-800 cursor-pointer inline-block">
               Explore Resources →
-            </button>
-          </div>
-          <div className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer">
-            <div className="text-5xl mb-4">🤝</div>
+            </span>
+          </Link>
+          <Link href="/frontline" className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer hover:shadow-lg transition-shadow duration-200 block">
+            <div className="mb-4 flex justify-center">
+              <HandHeart className="w-12 h-12 icon-gradient" />
+            </div>
             <h3 className="text-2xl font-bold mb-2">Social Services, Healthcare & Government</h3>
-            <p className="text-gray-600">
-              Access practical tools and guidance to make your services inclusive, respectful, and accessible for 2SLGBTQI+ elders.
-            </p>
-            <button className="mt-4 text-fuchsia-600 font-semibold hover:text-fuchsia-800">
+            <span className="mt-4 text-fuchsia-600 font-semibold hover:text-fuchsia-800 cursor-pointer inline-block">
               Explore Resources →
-            </button>
-          </div>
-          <div className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer">
-            <div className="text-5xl mb-4">🌈</div>
+            </span>
+          </Link>
+          <Link href="/seniors" className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer hover:shadow-lg transition-shadow duration-200 block">
+            <div className="mb-4 flex justify-center">
+              <Rainbow className="w-12 h-12 icon-gradient" />
+            </div>
             <h3 className="text-2xl font-bold mb-2">2SLGBTQI+ Older People</h3>
-            <p className="text-gray-600">
-              Connect with welcoming communities, find supportive resources, and discover opportunities to share your voice.
-            </p>
-            <button className="mt-4 text-fuchsia-600 font-semibold hover:text-fuchsia-800">
+            <span className="mt-4 text-fuchsia-600 font-semibold hover:text-fuchsia-800 cursor-pointer inline-block">
               Explore Resources →
-            </button>
-          </div>
+            </span>
+          </Link>
         </div>
       </div>
 
@@ -126,8 +121,8 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
                 <h3 className="text-2xl font-bold mb-2">{slide.name}</h3>
                 <p className="text-gray-600">{slide.description}</p>
                 <a 
-                  href="#" 
-                  className="inline-block mt-4 font-semibold text-fuchsia-600 hover:text-fuchsia-800"
+                  href="/membership" 
+                  className="inline-block mt-4 font-semibold text-fuchsia-600 hover:text-fuchsia-800 cursor-pointer"
                 >
                   View Full Profile →
                 </a>

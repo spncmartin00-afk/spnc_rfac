@@ -8,6 +8,11 @@ export default function ContributePage() {
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="bg-white rounded-2xl p-8 space-y-10">
+          <div className="pt-8">
+              <a href="/resources" className="inline-block text-blue-600 font-semibold hover:text-blue-800">
+                &larr; Back to Resources
+              </a>
+            </div>
             <div className="text-center">
               <FontAwesomeIcon icon={faLightbulb} className="text-6xl text-blue-600 mb-4" />
               <h1 className="text-4xl font-bold mb-4 text-gray-800">

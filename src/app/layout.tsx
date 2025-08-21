@@ -1,12 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import "../lib/fontawesome";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: "Senior Pride Network Canada | National 2SLGBTQI+ Seniors Hub",
@@ -20,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased text-gray-800`}>
+      <body className="antialiased text-gray-800">
         {children}
       </body>
     </html>

@@ -67,7 +67,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link 
-                  href="/about" 
+                  href="/about/our-story" 
                   prefetch={true}
                   className="hover:underline"
                 >
@@ -117,9 +117,15 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-white mb-4">Policies</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:underline">Privacy Policy</a></li>
-              <li><a href="#" className="hover:underline">Terms of Use</a></li>
-              <li><a href="#" className="hover:underline">Accessibility Statement</a></li>
+              <li>
+                <Link 
+                  href="/privacy" 
+                  prefetch={true}
+                  className="hover:underline"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
               <li>
                 <Link 
                   href="/land-acknowledgement" 
@@ -189,7 +195,7 @@ export default function Footer() {
                   onChange={handleInputChange}
                   className="mt-1"
                 />
-                <span>I agree to the <a href="#" className="underline">Privacy Policy</a>.</span>
+                <span>I agree to the <Link href="/privacy" className="underline">Privacy Policy</Link>.</span>
               </label>
               <button 
                 type="submit" 

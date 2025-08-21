@@ -1,6 +1,7 @@
 'use client';
 
 import PathCard from './PathCard';
+import { Building, Stethoscope, Rainbow } from 'lucide-react';
 
 export default function PathCardSection() {
   const handleOrganizationsClick = () => {
@@ -24,19 +25,19 @@ export default function PathCardSection() {
       <h2 className="text-3xl font-bold text-center mb-10">We have resources for:</h2>
       <div className="grid md:grid-cols-3 gap-8">
         <PathCard
-          emoji="🏢️"
+          icon={<Building className="w-12 h-12 icon-gradient" />}
           title="Organizations & Groups"
           description="Strengthen your programs with tailored resources, training, and peer connections focused on older 2SLGBTQI+ people."
           onClick={handleOrganizationsClick}
         />
         <PathCard
-          emoji="🩺"
+          icon={<Stethoscope className="w-12 h-12 icon-gradient" />}
           title="Social Services, Healthcare & Government"
           description="Access practical tools and guidance to make your services inclusive, respectful, and accessible for 2SLGBTQI+ elders."
           onClick={handleHealthcareClick}
         />
         <PathCard
-          emoji="🌈"
+          icon={<Rainbow className="w-12 h-12 icon-gradient" />}
           title="2SLGBTQI+ Older People"
           description="Connect with welcoming communities, find supportive resources, and discover opportunities to share your voice."
           onClick={handleSeniorsClick}

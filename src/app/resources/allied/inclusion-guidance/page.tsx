@@ -8,6 +8,11 @@ export default function InclusionGuidancePage() {
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="bg-white rounded-2xl p-8 space-y-10">
+          <div className="pt-8">
+              <a href="/resources" className="inline-block text-blue-600 font-semibold hover:text-blue-800">
+                &larr; Back to Resources
+              </a>
+            </div>
             <div className="text-center">
               <FontAwesomeIcon icon={faLanguage} className="text-6xl text-blue-600 mb-4" />
               <h1 className="text-4xl font-bold mb-4 text-gray-800">
@@ -50,22 +55,6 @@ export default function InclusionGuidancePage() {
                   <p className="text-gray-700 mb-4">Examples of successful implementation of inclusive practices in senior care settings across Canada.</p>
                   <a href="#" className="inline-block text-blue-600 font-semibold hover:text-blue-800">
                     Read Case Studies &rarr;
-                  </a>
-                </div>
-                
-                <div className="bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
-                  <h3 className="font-semibold text-xl mb-3">Policy Development Toolkit</h3>
-                  <p className="text-gray-700 mb-4">Templates and guidelines for developing inclusive policies and procedures within your organization.</p>
-                  <a href="#" className="inline-block text-blue-600 font-semibold hover:text-blue-800">
-                    Download Toolkit &rarr;
-                  </a>
-                </div>
-                
-                <div className="bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
-                  <h3 className="font-semibold text-xl mb-3">Staff Assessment Tools</h3>
-                  <p className="text-gray-700 mb-4">Self-assessment questionnaires to gauge your organization&apos;s current level of 2SLGBTQI+ inclusivity.</p>
-                  <a href="#" className="inline-block text-blue-600 font-semibold hover:text-blue-800">
-                    Access Tools &rarr;
                   </a>
                 </div>
               </div>
