@@ -64,7 +64,7 @@ export default function FrontlinePage() {
                   <p className="text-sm text-gray-600">Showcase your work via our directory and spotlight features.</p>
                 </Link>
               </div>
-              <a href="#" className="inline-block mt-6 bg-fuchsia-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-fuchsia-700">
+              <a href="/membership" className="inline-block mt-6 bg-fuchsia-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-fuchsia-700">
                 Join Our Frontline Network
               </a>
             </div>

@@ -74,7 +74,7 @@ export default function AlliedPage() {
               <p className="text-gray-700 max-w-3xl mx-auto">
                 We invite you to actively review our guidelines for inclusive practices, integrate our resources into your operations, and share your own expertise to foster a more comprehensive and affirming landscape for all seniors in Canada.
               </p>
-              <a href="#" className="inline-block mt-2 bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700">Become an Allied Member</a>
+              <a href="/membership" className="inline-block mt-2 bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700">Become an Allied Member</a>
             </section>
           </div>
         </div>
