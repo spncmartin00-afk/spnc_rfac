@@ -82,7 +82,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors duration-200"
+                    className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors duration-200 text-base"
                     onClick={() => setIsAboutDropdownOpen(false)}
                   >
                     {item.label}
@@ -128,7 +128,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors duration-200"
+                    className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors duration-200 text-base"
                     onClick={() => setIsResourcesDropdownOpen(false)}
                   >
                     {item.label}
@@ -162,7 +162,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors duration-200"
+                    className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors duration-200 text-base"
                     onClick={() => setIsTrainingDropdownOpen(false)}
                   >
                     {item.label}
@@ -268,7 +268,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block nav-link w-full text-center py-2 pl-4 hover:text-fuchsia-600 text-sm"
+                    className="block nav-link w-full text-center py-2 pl-4 hover:text-fuchsia-600 text-base"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       setIsAboutDropdownOpen(false);
@@ -317,7 +317,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block nav-link w-full text-center py-2 pl-4 hover:text-fuchsia-600 text-sm"
+                    className="block nav-link w-full text-center py-2 pl-4 hover:text-fuchsia-600 text-base"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       setIsResourcesDropdownOpen(false);
@@ -353,7 +353,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block nav-link w-full text-center py-2 pl-4 hover:text-fuchsia-600 text-sm"
+                    className="block nav-link w-full text-center py-2 pl-4 hover:text-fuchsia-600 text-base"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       setIsTrainingDropdownOpen(false);
