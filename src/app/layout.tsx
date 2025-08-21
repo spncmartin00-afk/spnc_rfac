@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import "../lib/fontawesome";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "Senior Pride Network Canada | National 2SLGBTQI+ Seniors Hub",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased text-gray-800">
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
