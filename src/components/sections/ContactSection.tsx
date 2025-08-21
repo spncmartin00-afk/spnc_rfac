@@ -30,9 +30,9 @@ export default function ContactSection({ isActive }: ContactSectionProps) {
   return (
     <section className={`section ${isActive ? 'active' : ''}`}>
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Contact Us</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">We'd Love to Hear From You</h1>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Get in touch with us to learn more about our work or explore partnership opportunities.
+          Whether you have questions about our services, want to volunteer, or need support, our team is ready to help. Fill out the form below and we'll get back to you as soon as possible.
         </p>
       </div>
       

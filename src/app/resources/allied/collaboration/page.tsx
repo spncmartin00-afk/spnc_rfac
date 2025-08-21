@@ -1,18 +1,22 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHandshakeAngle } from '@fortawesome/free-solid-svg-icons';
 import Layout from '@/components/layout/Layout';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export default function CollaborationPage() {
   return (
     <Layout>
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-4 max-w-6xl">
+          <Link 
+            href="/resources/allied" 
+            className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6 font-semibold"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Allied Resources
+          </Link>
           <div className="bg-white rounded-2xl p-8 space-y-10">
-          <div className="pt-8">
-              <a href="/resources/allied" className="inline-block text-blue-600 font-semibold hover:text-blue-800">
-                &larr; Back to Resources
-              </a>
-            </div>
             <div className="text-center">
               <FontAwesomeIcon icon={faHandshakeAngle} className="text-6xl text-blue-600 mb-4" />
               <h1 className="text-4xl font-bold mb-4 text-gray-800">

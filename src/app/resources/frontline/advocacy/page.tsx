@@ -10,14 +10,14 @@ export default function AdvocacyPage() {
     <Layout>
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-4 max-w-6xl">
+          <Link 
+            href="/resources/frontline" 
+            className="inline-flex items-center text-fuchsia-600 hover:text-fuchsia-700 mb-6 font-semibold"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Frontline
+          </Link>
           <div className="bg-white rounded-2xl p-8 space-y-10">
-            <div className="flex items-center mb-6">
-              <Link href="/resources/frontline" className="flex items-center text-fuchsia-600 hover:text-fuchsia-800 mr-4">
-                <ArrowLeft className="w-5 h-5 mr-2" />
-                Back to Frontline
-              </Link>
-            </div>
-
             <div className="text-center">
               <div className="mb-4 flex justify-center">
                 <FontAwesomeIcon icon={faBullhorn} className="w-16 h-16 text-fuchsia-600" />
@@ -146,25 +146,6 @@ export default function AdvocacyPage() {
                 </div>
               </div>
             </section>
-
-            <section className="space-y-6">
-              <h3 className="text-2xl font-bold text-center">Take Action Now</h3>
-              <div className="bg-gradient-to-r from-fuchsia-600 to-purple-600 text-white p-8 rounded-lg text-center">
-                <h4 className="text-xl font-bold mb-4">Join Our National Advocacy Campaign</h4>
-                <p className="mb-6">
-                  Be part of a coordinated effort to improve the lives of 2SLGBTQI+ seniors across Canada. Your voice matters, and together we can create meaningful change.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a href="#" className="bg-white text-fuchsia-600 font-bold py-3 px-6 rounded-lg hover:bg-gray-100">
-                    Sign Up for Action Alerts
-                  </a>
-                  <a href="#" className="bg-fuchsia-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-fuchsia-800">
-                    Contact Your Representative
-                  </a>
-                </div>
-              </div>
-            </section>
-
             <div className="text-center space-y-4">
               <div className="bg-white p-6 rounded-lg border">
                 <h3 className="text-xl font-bold mb-2">Need Advocacy Support?</h3>

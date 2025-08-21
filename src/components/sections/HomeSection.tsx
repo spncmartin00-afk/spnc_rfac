@@ -52,15 +52,15 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
   return (
     <section className={`section ${isActive ? 'active' : ''}`}>
       {/* Hero Section */}
-      <div className="hero-background bg-white px-48 py-40 rounded-1xl shadow-lg text-center relative overflow-hidden">
-
+      <div className="hero-background bg-white px-12 py-40 rounded-1xl shadow-lg text-center relative overflow-hidden">
         <div className="relative z-10">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg" >
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg" >
             Senior Pride Network Canada
           </h1>
-          <p className="text-lg text-white max-w-4xl mx-auto drop-shadow-md" >
-            Connecting 2SLGBTQI+ older people and the organizations that serve them — so every elder can live with dignity, safety, and connection anywhere in Canada.
-          </p>
+          <div className="text-xl text-white max-w-4xl mx-auto drop-shadow-md">
+            <p>Connecting 2SLGBTQI+ older people and the organizations that serve them.</p>
+            <p>So every elder can live with dignity, safety, and connection anywhere in Canada.</p>
+          </div>
         </div>
       </div>
 

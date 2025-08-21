@@ -1,12 +1,21 @@
 'use client';
 
 import Layout from '@/components/layout/Layout';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export default function CommunityMapPage() {
   return (
     <Layout>
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-4 max-w-6xl">
+          <Link 
+            href="/resources" 
+            className="inline-flex items-center text-fuchsia-600 hover:text-fuchsia-700 mb-6 font-semibold"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Resources
+          </Link>
           <div className="bg-white p-6 md:p-8 rounded-2xl">
             <h2 className="text-3xl font-bold mb-2">Community Map</h2>
             <p className="text-gray-600 mb-6">Find local projects, programs, services, and activities for older 2SLGBTQI+ people near you. Search by address, postal code, or community name. Contribute a resource to help the network grow.</p>

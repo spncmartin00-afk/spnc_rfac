@@ -39,15 +39,8 @@ export default function MembershipSection({ isActive }: MembershipSectionProps) 
 
   return (
     <section className={`section ${isActive ? 'active' : ''}`}>
-      <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Join Our National Network</h1>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Become part of the SPNC/RFAC community and help us create a stronger, more inclusive Canada for queer seniors.
-        </p>
-      </div>
-
       {/* Our Valued Members */}
-      <div className="mt-12 text-center bg-white p-8 rounded-2xl shadow-lg">
+      <div className="text-center bg-white p-4 rounded-2xl shadow-lg">
         <h2 className="text-3xl font-bold mb-6">Our Valued Members</h2>
         <p className="text-gray-600 max-w-3xl mx-auto mb-8">
           We are proud to feature our Frontline and Allied member organizations across Canada. Click on a province to see the organizations making a difference in that region.

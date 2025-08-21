@@ -9,13 +9,20 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
-import { Settings } from 'lucide-react';
+import { Settings, ArrowLeft } from 'lucide-react';
 
 export default function FrontlinePage() {
   return (
     <Layout>
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-4 max-w-6xl">
+          <Link 
+            href="/resources" 
+            className="inline-flex items-center text-fuchsia-600 hover:text-fuchsia-700 mb-6 font-semibold"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Resources
+          </Link>
           <div className="bg-white rounded-2xl p-8 space-y-10">
             <div className="text-center">
               <div className="mb-4 flex justify-center">

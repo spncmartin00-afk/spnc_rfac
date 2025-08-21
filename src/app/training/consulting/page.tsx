@@ -1,5 +1,7 @@
 'use client';
 import Layout from '@/components/layout/Layout';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 import { useState, ChangeEvent, FormEvent } from 'react';
 
 interface FormData {
@@ -88,6 +90,13 @@ export default function ConsultingPage() {
         </div>
 
         <div className="container mx-auto px-4 max-w-6xl py-12">
+          <Link 
+            href="/training" 
+            className="inline-flex items-center text-fuchsia-600 hover:text-fuchsia-700 mb-6 font-semibold"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Training
+          </Link>
           <div className="bg-white rounded-2xl p-8">
             
             <div className="grid md:grid-cols-2 gap-8">

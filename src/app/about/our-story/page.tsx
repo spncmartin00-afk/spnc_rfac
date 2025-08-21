@@ -1,10 +1,19 @@
 import Layout from '@/components/layout/Layout';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export default function OurStoryPage() {
   return (
     <Layout>
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-4 max-w-6xl">
+          <Link 
+            href="/about" 
+            className="inline-flex items-center text-fuchsia-600 hover:text-fuchsia-700 mb-6 font-semibold"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to About Us
+          </Link>
           <div className="bg-white rounded-2xl p-8 space-y-4">
             <h2 className="text-3xl font-bold mb-2">Our Story</h2>
             <p className="text-gray-700">

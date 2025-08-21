@@ -30,12 +30,9 @@ export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
   return (
     <section className={`section ${isActive ? 'active' : ''}`}>
       <div className="text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          One hub. Three pathways. Practical tools for action.
-        </h1>
-        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+        <h2 className="text-xl text-gray-600 max-w-3xl mx-auto">
           This is the central hub for all our resources. Find the tools, guides, and information you need, tailored to your role in the community.
-        </p>
+        </h2>
       </div>
 
       {/* Landing Page */}

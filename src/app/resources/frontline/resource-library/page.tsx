@@ -9,14 +9,14 @@ export default function ResourceLibraryPage() {
     <Layout>
       <div className="min-h-screen bg-gray-50 py-12">
         <div className="container mx-auto px-4 max-w-6xl">
+          <Link 
+            href="/resources/frontline" 
+            className="inline-flex items-center text-fuchsia-600 hover:text-fuchsia-700 mb-6 font-semibold"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Frontline
+          </Link>
           <div className="bg-white rounded-2xl p-8 space-y-10">
-            <div className="flex items-center mb-6">
-              <Link href="/resources/frontline" className="flex items-center text-fuchsia-600 hover:text-fuchsia-800 mr-4">
-                <ArrowLeft className="w-5 h-5 mr-2" />
-                Back to Frontline
-              </Link>
-            </div>
-
             <div className="text-center">
               <div className="mb-4 flex justify-center">
                 <FontAwesomeIcon icon={faBookOpen} className="w-16 h-16 text-fuchsia-600" />

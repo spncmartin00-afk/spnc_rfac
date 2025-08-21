@@ -29,7 +29,7 @@ export default function Footer() {
 
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12 px-6">
+    <footer className="bg-gray-900 text-gray-300 py-4 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-5 gap-10">
           {/* Company Info & Social Media */}
@@ -42,7 +42,7 @@ export default function Footer() {
               <img 
                 src="/SPNC_RFAC_logo_IconPlusAcronymAndFullNameENFR_White_Web.png" 
                 alt="Senior Pride Network Canada / Réseau de la Fierté des personnes aînées du Canada" 
-                className="h-30 w-auto"
+                className="h-25 w-auto"
               />
             </Link>
             <p className="mt-4 text-sm leading-relaxed">
@@ -59,58 +59,6 @@ export default function Footer() {
                 <FontAwesomeIcon icon={faInstagram} className="text-lg" />
               </a>
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h3 className="font-bold text-white mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link 
-                  href="/about/our-story" 
-                  prefetch={true}
-                  className="hover:underline"
-                >
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/membership" 
-                  prefetch={true}
-                  className="hover:underline"
-                >
-                  Membership
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/resources" 
-                  prefetch={true}
-                  className="hover:underline"
-                >
-                  Resources
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/training" 
-                  prefetch={true}
-                  className="hover:underline"
-                >
-                  Training
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  href="/donate" 
-                  prefetch={true}
-                  className="hover:underline"
-                >
-                  Donate
-                </Link>
-              </li>
-            </ul>
           </div>
 
           {/* Policies */}
@@ -142,42 +90,17 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-white mb-4">Contacts</h3>
             <ul className="space-y-2 text-sm">
-              <li>
-                <Link 
-                  href="/contact" 
-                  prefetch={true}
-                  className="hover:underline"
-                >
-                  Contact Us
-                </Link>
-              </li>
               <li>Email: info@spnc-rfac.ca</li>
               <li>Address: SPNC/RFAC, 10-30 Ave. Cleary Ave., Ottawa, ON, K2A 4A1</li>
             </ul>
           </div>
 
           {/* Newsletter */}
-          <div className="lg:w-4/3">  
+          <div className="lg:w-3/3">  
             <h3 className="font-bold text-white mb-4">Newsletter</h3>
             <p className="text-sm mb-3">Stay up-to-date with our latest news and resources.</p>
             <form onSubmit={handleSubmit} className="space-y-3">
               <div className="grid grid-cols-2 gap-2">
-                <input 
-                  type="text" 
-                  name="firstName"
-                  placeholder="First name" 
-                  value={formData.firstName}
-                  onChange={handleInputChange}
-                  className="p-2 w-full bg-white text-gray-900 rounded-lg text-sm border-0 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" 
-                />
-                <input 
-                  type="text" 
-                  name="lastName"
-                  placeholder="Last name" 
-                  value={formData.lastName}
-                  onChange={handleInputChange}
-                  className="p-2 w-full bg-white text-gray-900 rounded-lg text-sm border-0 focus:outline-none focus:ring-2 focus:ring-fuchsia-500" 
-                />
               </div>
               <input 
                 type="email" 
@@ -204,7 +127,6 @@ export default function Footer() {
                 Subscribe
               </button>
             </form>
-            <p className="mt-6 text-xs text-gray-400">&copy; 2024 Senior Pride Network Canada. All rights reserved.</p>
           </div>
         </div>
       </div>

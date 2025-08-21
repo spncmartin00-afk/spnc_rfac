@@ -1,4 +1,6 @@
 import Layout from '@/components/layout/Layout';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export default function WorkshopsPage() {
   return (
@@ -14,6 +16,13 @@ export default function WorkshopsPage() {
         </div>
 
         <div className="max-w-4xl mx-auto px-6 py-12">
+          <Link 
+            href="/training" 
+            className="inline-flex items-center text-fuchsia-600 hover:text-fuchsia-700 mb-6 font-semibold"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Training
+          </Link>
           <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-6">Available Training & Workshops</h2>
             
