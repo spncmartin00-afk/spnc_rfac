@@ -9,7 +9,7 @@ export default function EducationPage() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="bg-white rounded-2xl p-8 space-y-10">
           <div className="pt-8">
-              <a href="/resources" className="inline-block text-blue-600 font-semibold hover:text-blue-800">
+              <a href="/resources/allied" className="inline-block text-blue-600 font-semibold hover:text-blue-800">
                 &larr; Back to Resources
               </a>
             </div>
@@ -61,12 +61,6 @@ export default function EducationPage() {
                 </div>
               </div>
             </section>
-
-            <div className="text-center pt-8">
-              <a href="/resources" className="inline-block text-blue-600 font-semibold hover:text-blue-800">
-                &larr; Back to Resources
-              </a>
-            </div>
           </div>
         </div>
       </div>

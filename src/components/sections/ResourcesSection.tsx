@@ -42,7 +42,7 @@ export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
       {activeSubSection === 'landing' && (
         <div className="mt-12 grid md:grid-cols-4 gap-8">
           <Link 
-            href="/frontline"
+            href="/resources/frontline"
             className="card bg-white p-8 rounded-2xl text-center cursor-pointer hover:bg-gray-50 transition-colors"
           >
             <div className="mb-4 flex justify-center">
@@ -52,7 +52,7 @@ export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
             <p className="text-gray-600">Resources and tools to strengthen your work.</p>
           </Link>
           <Link 
-            href="/allied"
+            href="/resources/allied"
             className="card bg-white p-8 rounded-2xl text-center cursor-pointer hover:bg-gray-50 transition-colors"
           >
             <div className="mb-4 flex justify-center">
@@ -62,7 +62,7 @@ export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
             <p className="text-gray-600">Guidance for building inclusive services.</p>
           </Link>
           <Link 
-            href="/seniors"
+            href="/resources/seniors"
             className="card bg-white p-8 rounded-2xl text-center cursor-pointer hover:bg-gray-50 transition-colors"
           >
             <div className="mb-4 flex justify-center">
@@ -72,7 +72,7 @@ export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
             <p className="text-gray-600">Resources and support for your wellbeing.</p>
           </Link>
           <Link 
-            href="/community-map"
+            href="/resources/community-map"
             className="card bg-white p-8 rounded-2xl text-center cursor-pointer hover:bg-gray-50 transition-colors"
           >
             <div className="mb-4 flex justify-center">
@@ -129,7 +129,7 @@ export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
                 <p className="text-sm text-gray-600">Showcase your work via our directory and spotlight features.</p>
               </div>
             </div>
-            <Link href="/frontline" className="inline-block mt-6 bg-fuchsia-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-fuchsia-700">
+            <Link href="/resources/frontline" className="inline-block mt-6 bg-fuchsia-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-fuchsia-700">
               Join Our Frontline Network
             </Link>
           </div>
@@ -302,7 +302,7 @@ export default function ResourcesSection({ isActive }: ResourcesSectionProps) {
             <p className="text-gray-700 max-w-3xl mx-auto">
               We invite you to actively review our guidelines for inclusive practices, integrate our resources into your operations, and share your own expertise to foster a more comprehensive and affirming landscape for all seniors in Canada.
             </p>
-            <Link href="/allied" className="inline-block mt-2 bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700">
+            <Link href="/resources/allied" className="inline-block mt-2 bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700">
               Become an Allied Member
             </Link>
           </section>

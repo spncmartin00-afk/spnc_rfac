@@ -76,29 +76,6 @@ export default function AlliedPage() {
               </p>
               <a href="#" className="inline-block mt-2 bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700">Become an Allied Member</a>
             </section>
-            
-            <div className="text-center">
-              <div className="flex flex-wrap justify-center gap-2">
-                <Link href="/resources/allied/inclusion-guidance" className="chip hover:bg-blue-100 transition-colors cursor-pointer">
-                  <FontAwesomeIcon icon={faLanguage} className="mr-1" /> Inclusion Guidance
-                </Link>
-                <Link href="/resources/allied/visibility" className="chip hover:bg-blue-100 transition-colors cursor-pointer">
-                  <FontAwesomeIcon icon={faBullseye} className="mr-1" /> Visibility
-                </Link>
-                <Link href="/resources/allied/collaboration" className="chip hover:bg-blue-100 transition-colors cursor-pointer">
-                  <FontAwesomeIcon icon={faHandshakeAngle} className="mr-1" /> Collaboration
-                </Link>
-                <Link href="/resources/allied/education" className="chip hover:bg-blue-100 transition-colors cursor-pointer">
-                  <FontAwesomeIcon icon={faChalkboardUser} className="mr-1" /> Education
-                </Link>
-                <Link href="/resources/allied/contribute" className="chip hover:bg-blue-100 transition-colors cursor-pointer">
-                  <FontAwesomeIcon icon={faLightbulb} className="mr-1" /> Contribute
-                </Link>
-                <Link href="/resources/allied/network-access" className="chip hover:bg-blue-100 transition-colors cursor-pointer">
-                  <FontAwesomeIcon icon={faNetworkWired} className="mr-1" /> Network Access
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </div>

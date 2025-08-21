@@ -25,10 +25,10 @@ export default function Header() {
 
   const resourcesDropdownItems = [
     { href: '/resources', label: 'Landing Page' },
-    { href: '/frontline', label: 'Frontline Workers' },
-    { href: '/allied', label: 'Allied Orgs' },
-    { href: '/seniors', label: 'Seniors' },
-    { href: '/community-map', label: 'Community Map' },
+    { href: '/resources/frontline', label: 'Frontline Workers' },
+    { href: '/resources/allied', label: 'Allied Orgs' },
+    { href: '/resources/seniors', label: 'Seniors' },
+    { href: '/resources/community-map', label: 'Community Map' },
   ];
 
   const trainingDropdownItems = [
@@ -268,7 +268,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block nav-link w-full text-center py-2 pl-4 hover:text-fuchsia-600 text-base"
+                    className="block nav-link w-full text-center py-2 pl-4 hover:text-fuchsia-600 text-sm"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       setIsAboutDropdownOpen(false);
@@ -317,7 +317,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block nav-link w-full text-center py-2 pl-4 hover:text-fuchsia-600 text-base"
+                    className="block nav-link w-full text-center py-2 pl-4 hover:text-fuchsia-600 text-sm"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       setIsResourcesDropdownOpen(false);
@@ -353,7 +353,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block nav-link w-full text-center py-2 pl-4 hover:text-fuchsia-600 text-base"
+                    className="block nav-link w-full text-center py-2 pl-4 hover:text-fuchsia-600 text-sm"
                     onClick={() => {
                       setIsMobileMenuOpen(false);
                       setIsTrainingDropdownOpen(false);

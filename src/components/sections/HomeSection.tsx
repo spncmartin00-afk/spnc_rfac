@@ -68,7 +68,7 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
       <div className="mt-8">
         <h2 className="text-3xl font-bold text-center mb-8">We have resources for</h2>
         <div className="grid md:grid-cols-3 gap-8">
-          <Link href="/allied" className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer hover:shadow-lg transition-shadow duration-200 block">
+          <Link href="/resources/allied" className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer hover:shadow-lg transition-shadow duration-200 block">
             <div className="mb-4 flex justify-center">
               <Users className="w-12 h-12 icon-gradient" />
             </div>

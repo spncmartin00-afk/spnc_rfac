@@ -1,6 +1,80 @@
+'use client';
 import Layout from '@/components/layout/Layout';
+import { useState, ChangeEvent, FormEvent } from 'react';
+
+interface FormData {
+  name: string;
+  organization: string;
+  email: string;
+  message: string;
+}
+
+interface FormErrors {
+  name?: string;
+  organization?: string;
+  email?: string;
+  message?: string;
+}
 
 export default function ConsultingPage() {
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    organization: '',
+    email: '',
+    message: ''
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    const fieldName = id.replace('consulting-', '') as keyof FormData;
+    setFormData(prev => ({
+      ...prev,
+      [fieldName]: value
+    }));
+    // Clear error when user starts typing
+    if (errors[fieldName]) {
+      setErrors(prev => ({
+        ...prev,
+        [fieldName]: ''
+      }));
+    }
+  };
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    
+    // Validate all fields
+    const newErrors: FormErrors = {};
+    if (!formData.name.trim()) newErrors.name = 'Name is required';
+    if (!formData.organization.trim()) newErrors.organization = 'Organization is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (formData.email && !emailRegex.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    // If validation passes, you can submit the form
+    console.log('Form submitted:', formData);
+    alert('Thank you for your inquiry! We will be in touch shortly.');
+    
+    // Reset form
+    setFormData({
+      name: '',
+      organization: '',
+      email: '',
+      message: ''
+    });
+    setErrors({});
+  };
   return (
     <Layout>
       <div className="min-h-screen bg-gray-50">
@@ -40,22 +114,54 @@ export default function ConsultingPage() {
             <div className="mt-12 pt-8 border-t border-gray-200">
               <h3 className="text-2xl font-bold mb-4 text-center">Ready to get started?</h3>
               <p className="text-gray-600 max-w-xl mx-auto mb-6 text-center">Fill out the form below to tell us about your needs, and a member of our team will be in touch shortly.</p>
-              <form className="max-w-xl mx-auto">
+              <form className="max-w-xl mx-auto" onSubmit={handleSubmit}>
                 <div className="mb-4">
-                  <label htmlFor="consulting-name" className="block font-bold mb-2">Your Name</label>
-                  <input type="text" id="consulting-name" className="w-full p-3 border border-gray-300 rounded-lg" />
+                  <label htmlFor="consulting-name" className="block font-bold mb-2">Your Name *</label>
+                  <input 
+                    type="text" 
+                    id="consulting-name" 
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className={`w-full p-3 border rounded-lg ${errors.name ? 'border-red-500' : 'border-gray-300'}`}
+                  />
+                  {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="consulting-org" className="block font-bold mb-2">Organization</label>
-                  <input type="text" id="consulting-org" className="w-full p-3 border border-gray-300 rounded-lg" />
+                  <label htmlFor="consulting-org" className="block font-bold mb-2">Organization *</label>
+                  <input 
+                    type="text" 
+                    id="consulting-org" 
+                    required
+                    value={formData.organization}
+                    onChange={handleInputChange}
+                    className={`w-full p-3 border rounded-lg ${errors.organization ? 'border-red-500' : 'border-gray-300'}`}
+                  />
+                  {errors.organization && <p className="text-red-500 text-sm mt-1">{errors.organization}</p>}
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="consulting-email" className="block font-bold mb-2">Email Address</label>
-                  <input type="email" id="consulting-email" className="w-full p-3 border border-gray-300 rounded-lg" />
+                  <label htmlFor="consulting-email" className="block font-bold mb-2">Email Address *</label>
+                  <input 
+                    type="email" 
+                    id="consulting-email" 
+                    required
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className={`w-full p-3 border rounded-lg ${errors.email ? 'border-red-500' : 'border-gray-300'}`}
+                  />
+                  {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="consulting-message" className="block font-bold mb-2">Your Needs</label>
-                  <textarea id="consulting-message" rows={5} className="w-full p-3 border border-gray-300 rounded-lg"></textarea>
+                  <label htmlFor="consulting-message" className="block font-bold mb-2">Your Needs *</label>
+                  <textarea 
+                    id="consulting-message" 
+                    rows={5} 
+                    required
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    className={`w-full p-3 border rounded-lg ${errors.message ? 'border-red-500' : 'border-gray-300'}`}
+                  ></textarea>
+                  {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                 </div>
                 <button type="submit" className="w-full bg-fuchsia-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-fuchsia-700 text-lg">Submit Inquiry</button>
               </form>
