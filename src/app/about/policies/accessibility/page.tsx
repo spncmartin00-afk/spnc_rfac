@@ -6,85 +6,94 @@ export default function AccessibilityStatement() {
       <div className="min-h-screen bg-gray-50">
         <div className="bg-gradient-to-r via-orange-500 via-purple-600 from-red-500 to-pink-500 text-white py-16">
           <div className="max-w-4xl mx-auto px-6">
-            <h1 className="text-4xl font-bold mb-4">Accessibility Statement</h1>
+            <h1 className="text-4xl font-bold mb-4">Accessibility Policy</h1>
             <p className="text-xl text-purple-100">
-              Our commitment to digital accessibility for all users
+              Our commitment to accessibility for all users
             </p>
           </div>
         </div>
         <div className="max-w-4xl mx-auto px-6 py-12">
           <div className="bg-white rounded-lg shadow-sm p-8">
             <div className="prose max-w-none">
-              <h2 className="text-2xl font-bold mb-4">Our Commitment</h2>
+              <p className="text-gray-600 mb-6">
+                <strong>Effective Date:</strong> June 26, 2025
+              </p>
+
               <p className="mb-6">
-                Senior Pride Network Canada is committed to ensuring digital accessibility for people with disabilities. We are continually improving the user experience for everyone and applying relevant accessibility standards.
+                At Inclusify by All Welcome Consulting, we will make every reasonable effort to meet the requirements of the Accessibility for Ontarians with Disabilities Act (AODA), 2005, including all applicable elements of the Integrated Accessibility Standards.
               </p>
 
-              <h2 className="text-2xl font-bold mb-4">Conformance Status</h2>
+              <h2 className="text-2xl font-bold mb-4">Information and Communication</h2>
+              <p className="mb-6">
+                Inclusify by All Welcome Consulting will make its information accessible to people with disabilities by creating materials and supports in accessible formats, and it will notify the public of the types of accessible formats provided. For a detailed description of each principle and format, please visit <a href="https://www.AccessOn.ca" target="_blank" rel="noopener noreferrer" className="text-fuchsia-600 hover:underline">www.AccessOn.ca</a>.
+              </p>
+              
+              <p className="mb-6">
+                Inclusify by All Welcome Consulting is committed to providing alt-text and image descriptions for all posts on social media platforms that feature visual media. Inclusify by All Welcome Consulting will also provide automated English captioning for video content produced by the organization.
+              </p>
+
+              <p className="mb-6">
+                Furthermore, Inclusify by All Welcome Consulting will provide clients with alternate formats of information upon request. Suppose a particular material cannot be converted into an accessible format that meets the needs of the person requesting it. In that case, Inclusify by All Welcome Consulting will collaborate with the individual to provide a summary of the information or communication in another suitable way.
+              </p>
+
+              <h2 className="text-2xl font-bold mb-4">Canadian and Ontario Accessibility Standards and Regulations</h2>
+              <p className="mb-6">
+                Ontario's Integrated Accessibility Standards Regulation (IASR) aims to make Ontario more accessible to people with disabilities. The Accessibility for Ontarians with Disabilities Act (AODA), 2005, is the foundation on which the IASR is built. The AODA allows for the enforcement of the IASR through inspections, compliance orders, and administrative penalties.
+              </p>
+
+              <p className="mb-6">
+                Inclusify by All Welcome Consulting's accessibility practices are compliant with the AODA, the IASR, the Canadian Charter of Rights and Freedoms, the Ontario Human Rights Code, and other applicable Canadian federal and provincial accessibility regulations.
+              </p>
+
+              <p className="mb-6">
+                The Inclusify by All Welcome Consulting website complies with Web Content Accessibility Guidelines (WCAG) 2.2 Level AA, as published by the W3C Consortium's Web Accessibility Initiative (WAI).
+              </p>
+
+              <h2 className="text-2xl font-bold mb-4">Public-Facing Services</h2>
               <p className="mb-4">
-                The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA.
+                Inclusify by All Welcome Consulting will provide customer service in a manner that removes barriers for people with disabilities according to the following key principles of the AODA:
+              </p>
+              <ul className="list-disc pl-6 mb-6">
+                <li>Services will be provided in a manner that respects the dignity and independence of persons with disabilities.</li>
+                <li>Service to people with disabilities will be integrated with others, unless the person with the disability requires an alternate way of providing the goods, services or facility.</li>
+                <li>Persons with disabilities will be given equal opportunity to use and benefit from the goods, services, or facilities an organization or business has to offer.</li>
+                <li>We will communicate with people with disabilities in a manner that considers the individual's specific disability.</li>
+              </ul>
+
+              <h2 className="text-2xl font-bold mb-4">Assistive Devices, Service Animals, Service Dogs or Guide Dogs</h2>
+              <p className="mb-6">
+                Individuals with disabilities who use an assistive device will be permitted to use their device to access the services provided by Inclusify, a service of All Welcome Consulting.
+              </p>
+
+              <h2 className="text-2xl font-bold mb-4">Support Workers</h2>
+              <p className="mb-6">
+                If a person with a disability is accompanied by a support person, Inclusify by All Welcome Consulting will ensure that both persons are permitted to enter the premises together and that the person with a disability is not prevented from having access to the support person while on the premises. In remote settings, support workers are welcome to support an individual with disabilities.
+              </p>
+
+              <h2 className="text-2xl font-bold mb-4">Service Interruptions</h2>
+              <p className="mb-6">
+                If there is a temporary disruption in any of our services, either in whole or in part, Inclusify by All Welcome Consulting will provide notice of the disruption to the public via as many channels as possible, in accessible formats, where available. We will post physical notices where the disruption is taking place, as well as through other appropriate channels, such as email, phone, text, social media, or on our website.
               </p>
               <p className="mb-6">
-                This website strives to conform to WCAG 2.1 Level AA standards. We aim to meet these guidelines to ensure our content is accessible to all users, including those using assistive technologies.
+                Notice of the disruption will include the reason for the disruption, its anticipated duration, and a description of any alternative facilities or services that are available.
               </p>
 
-              <h2 className="text-2xl font-bold mb-4">Measures to Support Accessibility</h2>
-              <p className="mb-4">We take the following measures to ensure accessibility:</p>
-              <ul className="list-disc pl-6 mb-6">
-                <li>Include accessibility as part of our mission statement</li>
-                <li>Include accessibility throughout our internal policies</li>
-                <li>Integrate accessibility into our procurement practices</li>
-                <li>Provide continual accessibility training for our staff</li>
-                <li>Assign clear accessibility targets and responsibilities</li>
-                <li>Employ formal accessibility quality assurance methods</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold mb-4">Accessibility Features</h2>
-              <p className="mb-4">Our website includes the following accessibility features:</p>
-              <ul className="list-disc pl-6 mb-6">
-                <li>Keyboard navigation support</li>
-                <li>Screen reader compatibility</li>
-                <li>High contrast color schemes</li>
-                <li>Resizable text without loss of functionality</li>
-                <li>Alternative text for images</li>
-                <li>Clear headings and labels</li>
-                <li>Consistent navigation throughout the site</li>
-                <li>Focus indicators for keyboard users</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold mb-4">Feedback and Contact Information</h2>
-              <p className="mb-4">
-                We welcome your feedback on the accessibility of our website. Please let us know if you encounter accessibility barriers:
+              <h2 className="text-2xl font-bold mb-4">Process for Receiving Feedback</h2>
+              <p className="mb-6">
+                Inclusify by All Welcome Consulting will accept feedback about the way it provides goods and services to persons with disabilities, in person, by phone, email (<a href="mailto:hello@allwelcome.ca" className="text-fuchsia-600 hover:underline">hello@allwelcome.ca</a>), or in another manner that is suitable for a person with a disability.
               </p>
-              <div className="bg-gray-50 p-4 rounded mb-6">
-                <p><strong>Email:</strong> accessibility@spnc-rfac.ca</p>
-                <p><strong>Phone:</strong> Available upon request</p>
-                <p><strong>Address:</strong> SPNC/RFAC, 10-30 Cleary Ave, Ottawa, ON, K2A 4A1</p>
-              </div>
-
-              <h2 className="text-2xl font-bold mb-4">Technical Specifications</h2>
-              <p className="mb-4">
-                Accessibility of this website relies on the following technologies to work with the particular combination of web browser and any assistive technologies or plugins installed on your computer:
+              <p className="mb-6">
+                When a complaint is received about the way we provide goods, services, or facilities to persons with disabilities, Inclusify by All Welcome Consulting will let the person who submitted the feedback know about the actions the organization will take to resolve the issue.
               </p>
-              <ul className="list-disc pl-6 mb-6">
-                <li>HTML</li>
-                <li>WAI-ARIA</li>
-                <li>CSS</li>
-                <li>JavaScript</li>
-              </ul>
 
-              <h2 className="text-2xl font-bold mb-4">Assessment Approach</h2>
-              <p className="mb-4">
-                Senior Pride Network Canada assessed the accessibility of this website by the following approaches:
+              <h2 className="text-2xl font-bold mb-4">Transportation</h2>
+              <p className="mb-6">
+                Inclusify by All Welcome Consulting does not provide conventional or specialized commercial transportation services to passengers and is not required to adhere to the Transportation Standard.
               </p>
-              <ul className="list-disc pl-6 mb-6">
-                <li>Self-evaluation</li>
-                <li>External evaluation by accessibility consultants</li>
-                <li>User testing with people with disabilities</li>
-              </ul>
 
-              <p className="text-sm text-gray-600 mt-8">
-                This statement was created on January 1, 2024, and was last reviewed on January 1, 2024.
+              <h2 className="text-2xl font-bold mb-4">In-Person Events</h2>
+              <p className="mb-6">
+                If Inclusify by All Welcome Consulting hosts in-person events, it will endeavour to utilize spaces that adhere to the Design of Public Spaces Standard of the AODA. Inclusify by All Welcome Consulting will consider the potential accessibility needs of employees and attendees when planning and hosting in-person events.
               </p>
             </div>
           </div>

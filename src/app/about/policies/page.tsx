@@ -1,4 +1,5 @@
 import Layout from '@/components/layout/Layout';
+import Link from 'next/link';
 
 export default function Policies() {
   return (
@@ -8,100 +9,102 @@ export default function Policies() {
           <div className="max-w-4xl mx-auto px-6">
             <h1 className="text-4xl font-bold mb-4">Policies</h1>
             <p className="text-xl text-purple-100">
-              Our commitments to privacy, accessibility, and community
+              Our commitments to accessibility, privacy, and inclusive service
             </p>
           </div>
         </div>
         <div className="max-w-6xl mx-auto px-6 py-12">
       
-      <div className="space-y-8">
+      <div className="grid md:grid-cols-2 gap-8">
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Privacy Policy</h2>
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <p className="text-gray-600 mb-4">
-              We are committed to protecting your privacy and personal information. Our privacy policy outlines how we collect, use, and safeguard your data.
+          <div className="bg-white rounded-lg shadow-sm p-6 h-full flex flex-col">
+            <h2 className="text-2xl font-semibold mb-4 text-fuchsia-600">Accessibility Policy</h2>
+            <p className="text-gray-600 mb-4 flex-1">
+              At Inclusify by All Welcome Consulting, we make every reasonable effort to meet the requirements of the Accessibility for Ontarians with Disabilities Act (AODA), 2005. Our commitment includes WCAG 2.2 Level AA compliance and comprehensive accessibility standards.
             </p>
-            <div className="prose max-w-none">
-              <h3 className="text-lg font-medium mb-2">Information We Collect</h3>
-              <p className="mb-4">We collect information that you provide directly to us, such as when you create an account, subscribe to our newsletter, or contact us.</p>
-              
-              <h3 className="text-lg font-medium mb-2">How We Use Your Information</h3>
-              <p className="mb-4">We use the information we collect to provide, maintain, and improve our services and communicate with you.</p>
-              
-              <h3 className="text-lg font-medium mb-2">Information Sharing</h3>
-              <p className="mb-4">We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy.</p>
-            </div>
-            <button className="mt-4 text-blue-600 hover:text-blue-800">Read Full Privacy Policy</button>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Terms of Use</h2>
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <p className="text-gray-600 mb-4">
-              By using our website and services, you agree to comply with and be bound by our terms of use.
-            </p>
-            <div className="prose max-w-none">
-              <h3 className="text-lg font-medium mb-2">Acceptable Use</h3>
-              <p className="mb-4">You may use our services only for lawful purposes and in accordance with these terms.</p>
-              
-              <h3 className="text-lg font-medium mb-2">User Content</h3>
-              <p className="mb-4">You retain ownership of any content you submit, but grant us a license to use it in connection with our services.</p>
-              
-              <h3 className="text-lg font-medium mb-2">Prohibited Activities</h3>
-              <p className="mb-4">You may not use our services to harass, abuse, or harm others, or to violate any laws or regulations.</p>
-            </div>
-            <button className="mt-4 text-blue-600 hover:text-blue-800">Read Full Terms of Use</button>
-          </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Accessibility Statement</h2>
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <p className="text-gray-600 mb-4">
-              We are committed to ensuring digital accessibility for people with disabilities and continually improving the user experience for everyone.
-            </p>
-            <div className="prose max-w-none">
-              <h3 className="text-lg font-medium mb-2">Our Commitment</h3>
-              <p className="mb-4">We strive to conform to the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards.</p>
-              
-              <h3 className="text-lg font-medium mb-2">Accessibility Features</h3>
-              <ul className="list-disc pl-6 mb-4">
-                <li>Keyboard navigation support</li>
-                <li>Screen reader compatibility</li>
-                <li>High contrast color schemes</li>
-                <li>Resizable text and images</li>
-                <li>Alternative text for images</li>
+            <div className="prose max-w-none mb-4">
+              <h3 className="text-lg font-medium mb-2">Key Commitments</h3>
+              <ul className="list-disc pl-6 mb-4 text-gray-600">
+                <li>Alt-text and image descriptions for social media</li>
+                <li>Automated English captioning for video content</li>
+                <li>Alternative formats upon request</li>
+                <li>Barrier-free customer service</li>
+                <li>Support for assistive devices</li>
               </ul>
-              
-              <h3 className="text-lg font-medium mb-2">Feedback</h3>
-              <p className="mb-4">If you encounter any accessibility barriers, please contact us so we can improve.</p>
             </div>
-            <button className="mt-4 text-blue-600 hover:text-blue-800">Contact Accessibility Team</button>
+            <Link href="/about/policies/accessibility" className="inline-block bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold py-2 px-4 rounded transition-colors">
+              View Full Accessibility Policy
+            </Link>
           </div>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Land Acknowledgement</h2>
-          <div className="bg-gray-50 p-6 rounded-lg">
-            <div className="prose max-w-none">
-              <p className="text-gray-700 mb-4 italic">
-                We acknowledge that we are gathered on the traditional territories of the Blackfoot Confederacy (Siksika, Kainai, Piikani), the Tsuut'ina, the Îyâxe Nakoda Nations, the Métis Nation (Region 3), and all people who make their homes in the Treaty 7 region of Southern Alberta.
-              </p>
-              <p className="text-gray-600 mb-4">
-                As an organization serving LGBTQ2S+ seniors, we recognize the ongoing impacts of colonization on Indigenous communities and the unique challenges faced by Indigenous LGBTQ2S+ elders.
-              </p>
-              <p className="text-gray-600 mb-4">
-                We are committed to reconciliation and building meaningful relationships with Indigenous communities while advocating for the rights and dignity of all seniors, including Indigenous LGBTQ2S+ elders.
-              </p>
-              <p className="text-gray-600">
-                We encourage learning about the Indigenous history of the land where you live and work, and supporting Indigenous-led organizations and initiatives.
+          <div className="bg-white rounded-lg shadow-sm p-6 h-full flex flex-col">
+            <h2 className="text-2xl font-semibold mb-4 text-fuchsia-600">Privacy Policy</h2>
+            <p className="text-gray-600 mb-4 flex-1">
+              At Inclusify by All Welcome Consulting, your privacy is a top priority. We collect very limited personal information and never sell or rent your data. Our policy covers information collection, usage, and your choices regarding your information.
+            </p>
+            <div className="prose max-w-none mb-4">
+              <h3 className="text-lg font-medium mb-2">Key Points</h3>
+              <ul className="list-disc pl-6 mb-4 text-gray-600">
+                <li>Limited data collection only when you choose to provide it</li>
+                <li>Anonymous usage data via cookies and analytics</li>
+                <li>No selling or renting of personal information</li>
+                <li>Easy unsubscribe and data deletion options</li>
+                <li>Compliance with Ontario privacy laws</li>
+              </ul>
+            </div>
+            <Link href="/privacy" className="inline-block bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold py-2 px-4 rounded transition-colors">
+              View Full Privacy Policy
+            </Link>
+          </div>
+        </section>
+
+        <section>
+          <div className="bg-white rounded-lg shadow-sm p-6 h-full flex flex-col">
+            <h2 className="text-2xl font-semibold mb-4 text-fuchsia-600">Terms of Service</h2>
+            <p className="text-gray-600 mb-4 flex-1">
+              These Terms of Service govern your use of our websites at <a href="https://inclusify.allwelcome.ca" className="text-fuchsia-600 hover:underline" target="_blank" rel="noopener noreferrer">inclusify.allwelcome.ca</a> and <a href="https://allwelcome.ca" className="text-fuchsia-600 hover:underline" target="_blank" rel="noopener noreferrer">allwelcome.ca</a>. By accessing our sites, you agree to be bound by these terms and by the laws of Ontario and Canada.
+            </p>
+            <div className="prose max-w-none mb-4">
+              <h3 className="text-lg font-medium mb-2">Key Areas</h3>
+              <ul className="list-disc pl-6 mb-4 text-gray-600">
+                <li>Website use eligibility and licensing</li>
+                <li>Intellectual property protection</li>
+                <li>Permission to copy under fair use</li>
+                <li>Copyright attribution requirements</li>
+                <li>Limitation of liability</li>
+              </ul>
+            </div>
+            <Link href="/about/policies/terms-of-use" className="inline-block bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold py-2 px-4 rounded transition-colors">
+              View Full Terms of Service
+            </Link>
+          </div>
+        </section>
+
+        <section>
+          <div className="bg-white rounded-lg shadow-sm p-6 h-full flex flex-col">
+            <h2 className="text-2xl font-semibold mb-4 text-fuchsia-600">Land Acknowledgement</h2>
+            <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-4">
+              <p className="text-gray-800 italic text-sm">
+                Inclusify by All Welcome Consulting acknowledges that its operations, based in Ottawa, Ontario, are situated on the traditional, unceded territory of the Algonquin Anishinaabe People.
               </p>
             </div>
-            <div className="mt-4">
-              <button className="text-blue-600 hover:text-blue-800 mr-4">Learn More About Treaty 7</button>
-              <button className="text-blue-600 hover:text-blue-800">Indigenous Resources</button>
+            <p className="text-gray-600 mb-4 flex-1">
+              We recognize that a land acknowledgment is a starting point for ongoing learning, reflection, and action towards reconciliation. We are committed to incorporating Indigenous perspectives and supporting reconciliation efforts in our work.
+            </p>
+            <div className="prose max-w-none mb-4">
+              <h3 className="text-lg font-medium mb-2">Our Commitment</h3>
+              <ul className="list-disc pl-6 mb-4 text-gray-600">
+                <li>Ongoing learning about Indigenous history</li>
+                <li>Incorporating Indigenous perspectives respectfully</li>
+                <li>Supporting Indigenous communities and initiatives</li>
+                <li>Encouraging land acknowledgement education</li>
+              </ul>
             </div>
+            <Link href="/about/policies/land-acknowledgement" className="inline-block bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold py-2 px-4 rounded transition-colors">
+              View Full Land Acknowledgement
+            </Link>
           </div>
         </section>
       </div>

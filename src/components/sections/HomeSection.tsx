@@ -7,35 +7,17 @@ import { Users, HandHeart, Rainbow } from 'lucide-react';
 import Link from 'next/link';
 // Remove direct Sanity client import since we'll use API route
 import { Article, getCategoryColor, getCategoryLabel } from '@/lib/articleHelpers';
+import { getFeaturedMembers, Member } from '@/lib/memberData';
 
 interface HomeSectionProps {
   isActive: boolean;
 }
 
-const memberSlides = [
-  {
-    id: 1,
-    name: 'Rainbow Seniors of Montreal',
-    description: 'Providing vital social and health services to the 2SLGBTQI+ senior community in Quebec.',
-    logo: 'https://placehold.co/120x60/D946EF/FFFFFF?text=RSM'
-  },
-  {
-    id: 2,
-    name: 'ElderCare Toronto',
-    description: 'An allied organization creating inclusive long-term care homes in the Greater Toronto Area.',
-    logo: 'https://placehold.co/120x60/D946EF/FFFFFF?text=ECT'
-  },
-  {
-    id: 3,
-    name: 'Prairies Queer Seniors Alliance',
-    description: 'A grassroots network connecting queer elders across Manitoba, Saskatchewan, and Alberta.',
-    logo: 'https://placehold.co/120x60/D946EF/FFFFFF?text=PQSA'
-  }
-];
 
 export default function HomeSection({ isActive }: HomeSectionProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [articles, setArticles] = useState<Article[]>([]);
+  const memberSlides = getFeaturedMembers();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -129,11 +111,6 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
         <p className="text-gray-600 text-center max-w-3xl mx-auto mb-8">
           Stay informed about the policies and initiatives shaping the future of 2SLGBTQI+ seniors in Canada.
         </p>
-        {/* Debug info - remove this later */}
-        <div className="mb-4 p-4 bg-yellow-100 rounded-lg text-sm">
-          <strong>Debug Info:</strong> Found {articles.length} articles
-          {articles.length === 0 && <div>No featured articles found. Check Sanity Studio.</div>}
-        </div>
         
         <div className="grid md:grid-cols-3 gap-6">
           {articles.length > 0 ? (

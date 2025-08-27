@@ -1,23 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { memberOrganizations, getMembersByProvince, Member } from '@/lib/memberData';
 
 interface MembershipSectionProps {
   isActive: boolean;
 }
 
-const memberOrganizations = [
-  { id: 1, name: 'BC Senior Pride Society', province: 'British Columbia' },
-  { id: 2, name: 'Calgary Elder Services', province: 'Alberta' },
-  { id: 3, name: 'Manitoba Queer Seniors Alliance', province: 'Manitoba' },
-  { id: 4, name: 'Ontario Senior Care Network', province: 'Ontario' },
-  { id: 5, name: 'Quebec 2SLGBTQI+ Aînés', province: 'Quebec' },
-  { id: 6, name: 'Nova Scotia Pride Elders', province: 'Nova Scotia' },
-  { id: 7, name: 'Saskatchewan Seniors United', province: 'Saskatchewan' },
-  { id: 8, name: 'Alberta Elder Support', province: 'Alberta' },
-  { id: 9, name: 'Vancouver Island Elders', province: 'British Columbia' },
-  { id: 10, name: 'Pride of Prince Edward Island', province: 'Prince Edward Island' },
-];
 
 export default function MembershipSection({ isActive }: MembershipSectionProps) {
   const [expandedProvinces, setExpandedProvinces] = useState<string[]>([]);
@@ -30,10 +19,7 @@ export default function MembershipSection({ isActive }: MembershipSectionProps) 
     );
   };
 
-  const membersByProvince = memberOrganizations.reduce((acc, member) => {
-    (acc[member.province] = acc[member.province] || []).push(member);
-    return acc;
-  }, {} as Record<string, typeof memberOrganizations>);
+  const membersByProvince = getMembersByProvince();
 
   const sortedProvinces = Object.keys(membersByProvince).sort();
 
