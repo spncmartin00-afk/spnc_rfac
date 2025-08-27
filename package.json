@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "sanity": "sanity dev",
+    "sanity:build": "sanity build",
+    "sanity:deploy": "sanity deploy"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
@@ -16,6 +19,7 @@
     "@portabletext/react": "^3.2.1",
     "@sanity/client": "^7.8.2",
     "@sanity/image-url": "^1.1.0",
+    "@sanity/vision": "^4.6.0",
     "@supabase/supabase-js": "^2.55.0",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
@@ -23,16 +27,19 @@
     "next": "15.4.7",
     "next-sanity": "^10.0.13",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@sanity/cli": "^4.6.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.7",
+    "sanity": "^4.6.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

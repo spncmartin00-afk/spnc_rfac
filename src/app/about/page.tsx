@@ -1,5 +1,5 @@
 import Layout from '@/components/layout/Layout';
-import { BookOpen, FileText, Target, Users } from 'lucide-react';
+import { BookOpen, FileText, Target, Users, MessageSquare, Shield } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -14,7 +14,7 @@ export default function AboutPage() {
           </div>
         </div>
         <div className="max-w-6xl mx-auto px-6 py-12">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-2xl text-center">
               <div className="mb-4 flex justify-center">
                 <BookOpen className="w-12 h-12 icon-gradient" />
@@ -49,6 +49,24 @@ export default function AboutPage() {
               <h3 className="text-xl font-bold mb-2">Our Team</h3>
               <p className="text-gray-600 mb-4">Meet the dedicated people behind our organization.</p>
               <a href="/about/our-team" className="text-fuchsia-600 font-semibold hover:text-fuchsia-800">Meet The Team →</a>
+            </div>
+            
+            <div className="bg-white p-6 rounded-2xl text-center">
+              <div className="mb-4 flex justify-center">
+                <MessageSquare className="w-12 h-12 icon-gradient" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Communications</h3>
+              <p className="text-gray-600 mb-4">Access our strategic plan, reports, and newsletters.</p>
+              <a href="/about/communications" className="text-fuchsia-600 font-semibold hover:text-fuchsia-800">View Communications →</a>
+            </div>
+            
+            <div className="bg-white p-6 rounded-2xl text-center">
+              <div className="mb-4 flex justify-center">
+                <Shield className="w-12 h-12 icon-gradient" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">Policies</h3>
+              <p className="text-gray-600 mb-4">Our privacy policy, terms of use, and accessibility commitments.</p>
+              <a href="/about/policies" className="text-fuchsia-600 font-semibold hover:text-fuchsia-800">View Policies →</a>
             </div>
           </div>
         </div>

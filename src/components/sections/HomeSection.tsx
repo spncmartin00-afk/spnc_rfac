@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Users, HandHeart, Rainbow } from 'lucide-react';
 import Link from 'next/link';
+// Remove direct Sanity client import since we'll use API route
+import { Article, getCategoryColor, getCategoryLabel } from '@/lib/articleHelpers';
 
 interface HomeSectionProps {
   isActive: boolean;
@@ -33,12 +35,35 @@ const memberSlides = [
 
 export default function HomeSection({ isActive }: HomeSectionProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [articles, setArticles] = useState<Article[]>([]);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % memberSlides.length);
     }, 5000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        console.log('🔍 Fetching articles from API route...');
+        const response = await fetch('/api/articles');
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const fetchedArticles = await response.json();
+        console.log('✅ Fetched articles:', fetchedArticles);
+        console.log('📊 Number of articles:', fetchedArticles.length);
+        setArticles(fetchedArticles);
+      } catch (error) {
+        console.error('❌ Error fetching articles:', error);
+      }
+    };
+
+    fetchArticles();
   }, []);
 
   const nextSlide = () => {
@@ -98,9 +123,67 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
         </div>
       </div>
 
+      {/* Latest Updates */}
+      <section className="mt-16">
+        <h2 className="text-3xl font-bold text-center mb-2">Latest Updates</h2>
+        <p className="text-gray-600 text-center max-w-3xl mx-auto mb-8">
+          Stay informed about the policies and initiatives shaping the future of 2SLGBTQI+ seniors in Canada.
+        </p>
+        {/* Debug info - remove this later */}
+        <div className="mb-4 p-4 bg-yellow-100 rounded-lg text-sm">
+          <strong>Debug Info:</strong> Found {articles.length} articles
+          {articles.length === 0 && <div>No featured articles found. Check Sanity Studio.</div>}
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-6">
+          {articles.length > 0 ? (
+            articles.map((article) => {
+              const colors = getCategoryColor(article.category);
+              return (
+                <div key={article._id} className="bg-white p-6 rounded-2xl shadow-sm flex flex-col">
+                  <span className={`text-sm font-bold ${colors.text} ${colors.bg} py-1 px-2 rounded self-start`}>
+                    {getCategoryLabel(article.category)}
+                  </span>
+                  <h3 className="text-xl font-bold mt-3">{article.title}</h3>
+                  <p className="text-gray-600 text-sm mt-2 flex-1">{article.excerpt}</p>
+                  <Link 
+                    href={`/articles/${article.slug.current}`}
+                    className={`mt-4 ${colors.button} ${colors.buttonHover} text-white font-semibold py-2.5 px-5 rounded-lg self-start inline-block text-center`}
+                  >
+                    Explore resource
+                  </Link>
+                </div>
+              );
+            })
+          ) : (
+            // Fallback content while articles are loading or if none are found
+            <>
+              <div className="bg-white p-6 rounded-2xl shadow-sm flex flex-col">
+                <span className="text-sm font-bold text-fuchsia-600 bg-fuchsia-100 py-1 px-2 rounded self-start">Open Letter</span>
+                <h3 className="text-xl font-bold mt-3">Open Letter to Prime Minister Carney — Supporting 2SLGBTQI+ Seniors.</h3>
+                <p className="text-gray-600 text-sm mt-2 flex-1">Our call to prioritize dignity, safety, and inclusion for older 2SLGBTQI+ people across Canada.</p>
+                <button className="mt-4 bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold py-2.5 px-5 rounded-lg self-start">Explore resource</button>
+              </div>
+              <div className="bg-white p-6 rounded-2xl shadow-sm flex flex-col">
+                <span className="text-sm font-bold text-blue-600 bg-blue-100 py-1 px-2 rounded self-start">Statement</span>
+                <h3 className="text-xl font-bold mt-3">Our Statement for the 2025 Federal Election: A call for an inclusive future for older adults.</h3>
+                <p className="text-gray-600 text-sm mt-2 flex-1">Key priorities to ensure equitable access, safety, and respect for 2SLGBTQI+ elders.</p>
+                <button className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-5 rounded-lg self-start">Explore resource</button>
+              </div>
+              <div className="bg-white p-6 rounded-2xl shadow-sm flex flex-col">
+                <span className="text-sm font-bold text-emerald-600 bg-emerald-100 py-1 px-2 rounded self-start">Position Paper</span>
+                <h3 className="text-xl font-bold mt-3">SPNC/RFAC Position Paper: Supporting 2SLGBTQI+ Seniors in Canada — A Call to Action.</h3>
+                <p className="text-gray-600 text-sm mt-2 flex-1">Evidence-informed recommendations for governments and service providers.</p>
+                <button className="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-5 rounded-lg self-start">Explore resource</button>
+              </div>
+            </>
+          )}
+        </div>
+      </section>
+
       {/* Members Carousel */}
       <div className="mt-16">
-        <h2 className="text-3xl font-bold text-center mb-2">Our members making difference</h2>
+        <h2 className="text-3xl font-bold text-center mb-2">Featured Members</h2>
         <p className="text-gray-600 text-center max-w-3xl mx-auto mb-8">
           From coast to coast to coast, our members lead programs, build inclusive services, 
           and create community for 2SLGBTQI+ elders—here are a few of their stories.
@@ -120,12 +203,9 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
                 />
                 <h3 className="text-2xl font-bold mb-2">{slide.name}</h3>
                 <p className="text-gray-600">{slide.description}</p>
-                <a 
-                  href="/membership" 
-                  className="inline-block mt-4 font-semibold text-fuchsia-600 hover:text-fuchsia-800 cursor-pointer"
-                >
+                <span className="inline-block mt-4 font-semibold text-fuchsia-600">
                   View Full Profile →
-                </a>
+                </span>
               </div>
             ))}
           </div>
@@ -164,33 +244,7 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
         </div>
       </div>
 
-      {/* Latest Updates */}
-      <section className="mt-16">
-        <h2 className="text-3xl font-bold text-center mb-2">Latest Updates</h2>
-        <p className="text-gray-600 text-center max-w-3xl mx-auto mb-8">
-          Stay informed about the policies and initiatives shaping the future of 2SLGBTQI+ seniors in Canada.
-        </p>
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white p-6 rounded-2xl shadow-sm flex flex-col">
-            <span className="text-sm font-bold text-fuchsia-600 bg-fuchsia-100 py-1 px-2 rounded self-start">Open Letter</span>
-            <h3 className="text-xl font-bold mt-3">Open Letter to Prime Minister Carney — Supporting 2SLGBTQI+ Seniors.</h3>
-            <p className="text-gray-600 text-sm mt-2 flex-1">Our call to prioritize dignity, safety, and inclusion for older 2SLGBTQI+ people across Canada.</p>
-            <button className="mt-4 bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold py-2.5 px-5 rounded-lg self-start">Explore resource</button>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-sm flex flex-col">
-            <span className="text-sm font-bold text-blue-600 bg-blue-100 py-1 px-2 rounded self-start">Statement</span>
-            <h3 className="text-xl font-bold mt-3">Our Statement for the 2025 Federal Election: A call for an inclusive future for older adults.</h3>
-            <p className="text-gray-600 text-sm mt-2 flex-1">Key priorities to ensure equitable access, safety, and respect for 2SLGBTQI+ elders.</p>
-            <button className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-5 rounded-lg self-start">Explore resource</button>
-          </div>
-          <div className="bg-white p-6 rounded-2xl shadow-sm flex flex-col">
-            <span className="text-sm font-bold text-emerald-600 bg-emerald-100 py-1 px-2 rounded self-start">Position Paper</span>
-            <h3 className="text-xl font-bold mt-3">SPNC/RFAC Position Paper: Supporting 2SLGBTQI+ Seniors in Canada — A Call to Action.</h3>
-            <p className="text-gray-600 text-sm mt-2 flex-1">Evidence-informed recommendations for governments and service providers.</p>
-            <button className="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-5 rounded-lg self-start">Explore resource</button>
-          </div>
-        </div>
-      </section>
+      
     </section>
   );
 }
