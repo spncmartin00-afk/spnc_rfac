@@ -6,6 +6,7 @@ export interface Member {
   logo?: string;
   isFeatured?: boolean;
   membershipType: 'frontline' | 'allied';
+  profileUrl?: string;
 }
 
 export const memberOrganizations: Member[] = [
@@ -16,7 +17,8 @@ export const memberOrganizations: Member[] = [
     description: 'non-profit organization that brings together and supports English-speaking older adults and seniors (50+) in the 2SLGBTQIA+ community in and around Montréal',
     logo: '/members/gay&gray.png',
     isFeatured: true,
-    membershipType: 'frontline'
+    membershipType: 'frontline',
+    profileUrl: 'https://gayandgreymontreal.com/'
   },
   { 
     id: 2, 
@@ -25,16 +27,18 @@ export const memberOrganizations: Member[] = [
     description: 'An advocacy group advancing culturally appropriate services for 2SLGBTQIA+ seniors.',
     logo: '/members/diginityseniors.png',
     isFeatured: true,
-    membershipType: 'frontline'
+    membershipType: 'frontline',
+    profileUrl: 'https://www.dignityseniors.org/#gsc.tab=0'
   },
   { 
     id: 3, 
     name: 'Ottawa Senior Pride Network', 
     province: 'Ottawa',
     description: 'A grassroots network connecting queer elders across Manitoba, Saskatchewan, and Alberta.',
-    logo: '/members/ottawa_senior_pride.png',
+    logo: '/members/ottawa_senior.png',
     isFeatured: true,
-    membershipType: 'frontline'
+    membershipType: 'frontline',
+    profileUrl: 'https://ospn-rfao.ca/'
   },
  
 ];

@@ -83,17 +83,6 @@ export default function Header() {
             Training
           </Link>
 
-          {/* Newsletters Link */}
-          <Link
-            href="/newsletters"
-            prefetch={true}
-            className={`nav-link border-b-2 border-transparent pb-1 hover:text-fuchsia-600 font-semibold ${
-              isActive('/newsletters') ? 'active' : ''
-            }`}
-          >
-            Newsletters
-          </Link>
-
           <Link
             href="/contact"
             prefetch={true}
@@ -215,18 +204,6 @@ export default function Header() {
             }`}
           >
             Training
-          </Link>
-
-          {/* Mobile Newsletters Link */}
-          <Link
-            href="/newsletters"
-            prefetch={true}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className={`block nav-link w-full text-center py-2 hover:text-fuchsia-600 font-semibold ${
-              isActive('/newsletters') ? 'active' : ''
-            }`}
-          >
-            Newsletters
           </Link>
 
           <Link

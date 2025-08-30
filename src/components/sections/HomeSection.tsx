@@ -180,7 +180,7 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
                 key={slide.id}
                 className={`carousel-slide ${index === currentSlide ? 'active' : ''} bg-white p-8 rounded-2xl text-center shadow min-h-[400px] flex flex-col justify-center ${index !== currentSlide ? 'absolute inset-0' : ''}`}
               >
-                <div className="h-24 mb-4 flex items-center justify-center">
+                <div className="h-35 mb-4 flex items-center justify-center">
                   <img 
                     src={slide.logo} 
                     alt={`${slide.name} logo`} 

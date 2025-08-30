@@ -1,6 +1,9 @@
 import Layout from '@/components/layout/Layout';
+import NewsletterCard from '@/components/ui/NewsletterCard';
+import { getAllNewsletters } from '@/lib/newsletterData';
 
 export default function Communications() {
+  const newsletters = getAllNewsletters();
   return (
     <Layout>
       <div className="min-h-screen bg-gray-50">
@@ -70,20 +73,22 @@ export default function Communications() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">Newsletters</h2>
           <div className="bg-white p-6 rounded-lg border">
-            <p className="text-gray-600 mb-4">All newsletters [PDF]</p>
-            <div className="space-y-3">
-              <div className="flex justify-between items-center p-3 bg-gray-50 rounded border">
-                <span>Newsletter - Issue 1 [PDF]</span>
-                <button className="text-blue-600 hover:text-blue-800">Download</button>
-              </div>
-              <div className="flex justify-between items-center p-3 bg-gray-50 rounded border">
-                <span>Newsletter - Issue 2 [PDF]</span>
-                <button className="text-blue-600 hover:text-blue-800">Download</button>
-              </div>
-              <div className="flex justify-between items-center p-3 bg-gray-50 rounded border">
-                <span>Newsletter - Issue 3 [PDF]</span>
-                <button className="text-blue-600 hover:text-blue-800">Download</button>
-              </div>
+            <p className="text-gray-600 mb-6">Stay connected with the Senior Pride Network Canada through our regular newsletters. Get updates on community initiatives, resources, and upcoming events.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {newsletters.map((newsletter) => (
+                <NewsletterCard key={newsletter.id} newsletter={newsletter} />
+              ))}
+            </div>
+            <div className="text-center mt-8">
+              <a 
+                href="/newsletters" 
+                className="inline-flex items-center bg-fuchsia-600 text-white px-6 py-3 rounded-lg hover:bg-fuchsia-700 transition-colors font-semibold"
+              >
+                View All Newsletters
+                <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
             </div>
           </div>
         </section>

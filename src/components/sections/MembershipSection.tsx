@@ -66,9 +66,18 @@ export default function MembershipSection({ isActive }: MembershipSectionProps) 
                     {membersByProvince[province].sort((a, b) => a.name.localeCompare(b.name)).map((member) => (
                       <li key={member.id} className="bg-white p-4 rounded-lg flex justify-between items-center">
                         <span className="font-semibold">{member.name}</span>
-                        <a href="#" className="text-fuchsia-600 font-medium hover:underline text-sm">
-                          View Profile →
-                        </a>
+                        {member.profileUrl ? (
+                          <a 
+                            href={member.profileUrl} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-fuchsia-600 font-medium hover:underline text-sm"
+                          >
+                            View Profile →
+                          </a>
+                        ) : (
+                          <span className="text-gray-400 text-sm">Profile Coming Soon</span>
+                        )}
                       </li>
                     ))}
                   </ul>
