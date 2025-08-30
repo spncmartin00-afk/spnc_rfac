@@ -20,81 +20,100 @@ export default function TermsOfUse() {
               </p>
 
               <p className="mb-6">
-                Welcome to Inclusify by All Welcome Consulting! These Terms of Service ("Terms") govern your use of our website located at <a href="https://inclusify.allwelcome.ca/" className="text-fuchsia-600 hover:underline">https://inclusify.allwelcome.ca/</a> and <a href="https://allwelcome.ca/" className="text-fuchsia-600 hover:underline">https://allwelcome.ca/</a> (the "Site"). By accessing or using the Sites, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use the Site.
+                Welcome to the website of Senior Pride Network Canada / Réseau de la Fierté des personnes aînées du Canada (SPNC/RFAC) (<a href="https://spnc-rfac.ca/" className="text-fuchsia-600 hover:underline">https://spnc-rfac.ca/</a>).
               </p>
+              
               <p className="mb-6">
-                Any use of this and other affiliated Inclusify by All Welcome Consulting websites and web services is bound by these Terms, as well as by the laws of Ontario and Canada.
+                By accessing or using our website, you agree to comply with and be bound by these Terms of Use. Please read them carefully.
+              </p>
+              
+              <p className="mb-6">
+                <strong>If you do not agree to these terms, please do not use our website.</strong>
               </p>
 
-              <h2 className="text-2xl font-bold mb-4">1. Use of the Site</h2>
-              <h3 className="text-xl font-semibold mb-3">1.1 Eligibility:</h3>
+              <h2 className="text-2xl font-bold mb-4">1. About Us</h2>
+              <p className="mb-6">
+                Senior Pride Network Canada (SPNC/RFAC) is a federally incorporated, non-profit organization headquartered in Ottawa, Ontario. We unite, advocate for, and empower older 2SLGBTQI+ people across Canada.
+              </p>
+
+              <h2 className="text-2xl font-bold mb-4">2. Use of Our Website</h2>
               <p className="mb-4">
-                You must be at least 18 years old to use the Site. By using the Site, you represent and warrant that you meet this requirement. Inclusify by All Welcome Consulting does not monitor users' ages, and use is at their sole discretion.
-              </p>
-              <h3 className="text-xl font-semibold mb-3">1.2 License:</h3>
-              <p className="mb-4">
-                We grant you a limited, non-exclusive, non-transferable, and revocable license to use the Site for your personal, non-commercial use, subject to these Terms.
-              </p>
-              <h3 className="text-xl font-semibold mb-3">1.3 Prohibited Activities:</h3>
-              <p className="mb-2">You agree not to:</p>
-              <ul className="list-disc pl-6 mb-6">
-                <li>Use the Site for any unlawful purpose.</li>
-                <li>Engage in any activity that could harm, disrupt, or interfere with the functioning of the Site.</li>
-                <li>Attempt to gain unauthorized access to any portion or feature of the Site.</li>
-                <li>Use any automated means, such as bots or scrapers, to access the Site.</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold mb-4">2. Intellectual Property</h2>
-              <p className="mb-6">
-                All content on the Site, including text, graphics, logos, images, and publications, is the property of Inclusify by All Welcome Consulting or its content suppliers and is protected by intellectual property laws. You may not reproduce, distribute, or create derivative works from any content on the Site without our express written permission.
-              </p>
-
-              <h2 className="text-2xl font-bold mb-4">3. Permission to Copy</h2>
-              <p className="mb-6">
-                You may be allowed, without obtaining prior written permission, to use certain images, reports or text for promotion, in books and other printed matter, on clothing or other promotional items, online and Internet locations, for public exhibitions or demonstrations, in software applications, in television programs, commercials, movies, and/or video tapes, provided the use is not disparaging. The use must fall within the definition of "fair dealing" or "fair use" as defined under Canadian, U.S. and other applicable international copyright law. No use should mislead the public as to Inclusify by All Welcome Consulting sponsorship, affiliation or endorsement of your products or services. Inclusify by All Welcome Consulting reserves the right to withdraw permission at any time at the organization's discretion.
-              </p>
-
-              <h2 className="text-2xl font-bold mb-4">4. Copyright Attribution</h2>
-              <p className="mb-6">
-                Copyright attribution should state: "republished/reposted with permission from Inclusify by All Welcome Consulting." Standard reference citations, hyperlinks, and Creative Commons licensing references are required when available.
-              </p>
-
-              <h2 className="text-2xl font-bold mb-4">5. Disclaimer of Warranties</h2>
-              <p className="mb-6">
-                The Site is provided on an "as is" and "as available" basis. We make no representations or warranties of any kind, express or implied, regarding the operation or availability of the Site, or the information, content, or materials included on the Site. To the fullest extent permitted by applicable law, we disclaim all warranties, express or implied, including but not limited to implied warranties of merchantability and fitness for a particular purpose.
-              </p>
-
-              <h2 className="text-2xl font-bold mb-4">6. Limitation of Liability</h2>
-              <p className="mb-2">
-                To the fullest extent permitted by applicable law, Inclusify by All Welcome Consulting and its affiliates, directors, officers, employees, agents, and licensors shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from:
+                You may use our website for lawful, non-commercial purposes related to our mission. You agree not to:
               </p>
               <ul className="list-disc pl-6 mb-6">
-                <li>Your use of or inability to use the Site.</li>
-                <li>Any unauthorized access to or use of our servers and/or any personal information stored therein.</li>
-                <li>Any interruption or cessation of transmission to or from the Site.</li>
-                <li>Any bugs, viruses, Trojan horses, or similar malware that may be transmitted to or through the Site by any third party.</li>
-                <li>Any errors or omissions in any content or for any loss or damage incurred as a result of the use of any content posted, emailed, transmitted, or otherwise made available through the Site.</li>
+                <li>Use our website for fraudulent or unlawful purposes</li>
+                <li>Upload or transmit viruses, malware, or harmful code</li>
+                <li>Interfere with or disrupt website functionality</li>
+                <li>Infringe the rights of SPNC/RFAC or any third party</li>
               </ul>
 
-              <h2 className="text-2xl font-bold mb-4">7. Indemnification</h2>
-              <p className="mb-6">
-                You agree to indemnify and hold harmless Inclusify by All Welcome Consulting and its affiliates, directors, officers, employees, agents, and licensors from and against any claims, liabilities, damages, losses, and expenses, including without limitation reasonable legal and accounting fees, arising out of or in any way connected with your access to or use of the Site or your violation of these Terms.
-              </p>
-
-              <h2 className="text-2xl font-bold mb-4">8. Governing Law</h2>
-              <p className="mb-6">
-                These Terms shall be governed by and construed by the laws of Ontario and Canada, without regard to their conflict of law principles. You agree to submit to the personal and exclusive jurisdiction of the courts located within the provincial and/or federal courts to resolve any dispute or claim arising from these Terms.
-              </p>
-
-              <h2 className="text-2xl font-bold mb-4">9. Changes to These Terms</h2>
-              <p className="mb-6">
-                We reserve the right to modify these Terms at any time. Any changes will be effective immediately upon posting on the Site. Your continued use of the Site after any such changes constitutes your acceptance of the new Terms.
-              </p>
-
-              <h2 className="text-2xl font-bold mb-4">10. Contact Us</h2>
+              <h2 className="text-2xl font-bold mb-4">3. Intellectual Property</h2>
               <p className="mb-4">
-                If you have any questions about these Terms, please contact us at <a href="mailto:hello@allwelcome.ca" className="text-fuchsia-600 hover:underline">hello@allwelcome.ca</a>.
+                Unless otherwise stated, all content on our website — including text, images, graphics, logos, videos, and downloadable materials — is owned by SPNC/RFAC or used with permission.
               </p>
+              <p className="mb-4">
+                <strong>You may:</strong>
+              </p>
+              <ul className="list-disc pl-6 mb-4">
+                <li>View, download, or print materials for your personal, non-commercial use</li>
+                <li>Share our materials with proper credit and without modification</li>
+              </ul>
+              <p className="mb-4">
+                <strong>You may not:</strong>
+              </p>
+              <ul className="list-disc pl-6 mb-6">
+                <li>Modify, reproduce, or distribute our content for commercial purposes without prior written permission from SPNC/RFAC</li>
+              </ul>
+
+              <h2 className="text-2xl font-bold mb-4">4. External Links</h2>
+              <p className="mb-6">
+                Our website may contain links to third-party websites for your convenience. We are not responsible for the content, accuracy, or privacy practices of those sites. Following external links is at your own risk.
+              </p>
+
+              <h2 className="text-2xl font-bold mb-4">5. Disclaimer</h2>
+              <p className="mb-6">
+                The information on our website is provided for general information and awareness purposes only. While we make every effort to ensure accuracy, we do not guarantee that all information is complete, current, or error-free.
+              </p>
+              <p className="mb-6">
+                SPNC/RFAC is not responsible for any damages or losses arising from your use of our website or reliance on its content.
+              </p>
+
+              <h2 className="text-2xl font-bold mb-4">6. Events, Resources, and Third-Party Content</h2>
+              <p className="mb-6">
+                Our website may promote events, resources, or content provided by third parties. Inclusion of this information does not imply endorsement by SPNC/RFAC. We are not responsible for the accuracy or safety of third-party offerings.
+              </p>
+
+              <h2 className="text-2xl font-bold mb-4">7. Privacy</h2>
+              <p className="mb-6">
+                Your use of our website is also governed by our Privacy Policy. By using our website, you consent to the collection, use, and disclosure of your personal information as described in that policy.
+              </p>
+
+              <h2 className="text-2xl font-bold mb-4">8. Limitation of Liability</h2>
+              <p className="mb-6">
+                To the fullest extent permitted by Canadian law, SPNC/RFAC, its directors, employees, and volunteers shall not be liable for any direct, indirect, incidental, consequential, or punitive damages arising from your use of our website.
+              </p>
+
+              <h2 className="text-2xl font-bold mb-4">9. Governing Law</h2>
+              <p className="mb-6">
+                These Terms of Use are governed by the laws of the Province of Ontario and the applicable federal laws of Canada. Any disputes shall be resolved in the courts of Ontario.
+              </p>
+
+              <h2 className="text-2xl font-bold mb-4">10. Changes to These Terms</h2>
+              <p className="mb-6">
+                We may update these Terms of Use from time to time to reflect changes in our practices or legal requirements. Any updates will be posted on this page with a revised "Effective Date."
+              </p>
+
+              <h2 className="text-2xl font-bold mb-4">11. Contact Us</h2>
+              <p className="mb-4">
+                If you have questions about these Terms of Use, please contact:
+              </p>
+              <div className="mb-4">
+                <strong>Senior Pride Network Canada / Réseau de la Fierté des personnes aînées du Canada (SPNC/RFAC)</strong><br/>
+                10‑30 Cleary Ave.<br/>
+                Ottawa, ON K2A 4A1<br/>
+                <strong>Phone:</strong> 613‑915‑5678<br/>
+                <strong>Email:</strong> <a href="mailto:info@spnc-rfac.ca" className="text-fuchsia-600 hover:underline">info@spnc-rfac.ca</a>
+              </div>
             </div>
           </div>
         </div>

@@ -37,7 +37,7 @@ export default function Header() {
           />
         </Link>
 
-        <div className="hidden lg:flex items-center space-x-6">
+        <div className="hidden lg:flex items-center space-x-4">
           {/* About Us Link */}
           <Link
             href="/about"
@@ -82,6 +82,18 @@ export default function Header() {
           >
             Training
           </Link>
+
+          {/* Newsletters Link */}
+          <Link
+            href="/newsletters"
+            prefetch={true}
+            className={`nav-link border-b-2 border-transparent pb-1 hover:text-fuchsia-600 font-semibold ${
+              isActive('/newsletters') ? 'active' : ''
+            }`}
+          >
+            Newsletters
+          </Link>
+
           <Link
             href="/contact"
             prefetch={true}
@@ -102,10 +114,10 @@ export default function Header() {
           </Link>
         </div>
 
-        <div className="hidden lg:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center">
           <button 
             onClick={toggleLanguage}
-            className="relative bg-gray-50 rounded-lg p-1 flex items-center transition-colors duration-200 cursor-pointer"
+            className="relative bg-gray-50 rounded-lg p-1 flex items-center transition-colors duration-200 cursor-pointer ml-4"
           >
             <span className={`px-3 py-1 rounded-md text-sm font-medium transition-all duration-200 ${
               language === 'en' 
@@ -204,6 +216,19 @@ export default function Header() {
           >
             Training
           </Link>
+
+          {/* Mobile Newsletters Link */}
+          <Link
+            href="/newsletters"
+            prefetch={true}
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={`block nav-link w-full text-center py-2 hover:text-fuchsia-600 font-semibold ${
+              isActive('/newsletters') ? 'active' : ''
+            }`}
+          >
+            Newsletters
+          </Link>
+
           <Link
             href="/contact"
             prefetch={true}

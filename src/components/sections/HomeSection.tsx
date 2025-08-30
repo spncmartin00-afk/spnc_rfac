@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { Users, HandHeart, Rainbow } from 'lucide-react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 // Remove direct Sanity client import since we'll use API route
 import { Article, getCategoryColor, getCategoryLabel } from '@/lib/articleHelpers';
 import { getFeaturedMembers, Member } from '@/lib/memberData';
@@ -15,6 +16,7 @@ interface HomeSectionProps {
 
 
 export default function HomeSection({ isActive }: HomeSectionProps) {
+  const router = useRouter();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [articles, setArticles] = useState<Article[]>([]);
   const memberSlides = getFeaturedMembers();
@@ -54,6 +56,11 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
 
   const prevSlide = () => {
     setCurrentSlide((prev) => (prev - 1 + memberSlides.length) % memberSlides.length);
+  };
+
+  const handleViewProfile = (member: Member) => {
+    // Navigate to membership section with province parameter
+    router.push(`/membership?province=${encodeURIComponent(member.province)}`);
   };
 
   return (
@@ -166,23 +173,29 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
           and create community for 2SLGBTQI+ elders—here are a few of their stories.
         </p>
         
-        <div className="carousel relative max-w-3xl mx-auto">
+        <div className="carousel relative max-w-2xl mx-auto">
           <div className="relative">
             {memberSlides.map((slide, index) => (
               <div
                 key={slide.id}
-                className={`carousel-slide ${index === currentSlide ? 'active' : ''} bg-white p-8 rounded-2xl text-center shadow ${index !== currentSlide ? 'absolute inset-0' : ''}`}
+                className={`carousel-slide ${index === currentSlide ? 'active' : ''} bg-white p-8 rounded-2xl text-center shadow min-h-[400px] flex flex-col justify-center ${index !== currentSlide ? 'absolute inset-0' : ''}`}
               >
-                <img 
-                  src={slide.logo} 
-                  alt={`${slide.name} logo`} 
-                  className="mx-auto mb-4"
-                />
+                <div className="h-24 mb-4 flex items-center justify-center">
+                  <img 
+                    src={slide.logo} 
+                    alt={`${slide.name} logo`} 
+                    className="max-h-60 max-w-60 object-contain mx-auto"
+                    style={{ height: '10rem', width: '10rem' }}
+                  />
+                </div>
                 <h3 className="text-2xl font-bold mb-2">{slide.name}</h3>
                 <p className="text-gray-600">{slide.description}</p>
-                <span className="inline-block mt-4 font-semibold text-fuchsia-600">
+                <button 
+                  onClick={() => handleViewProfile(slide)}
+                  className="mt-4 bg-fuchsia-600 text-white px-4 py-2 rounded-lg hover:bg-fuchsia-700 transition-colors font-semibold cursor-pointer"
+                >
                   View Full Profile →
-                </span>
+                </button>
               </div>
             ))}
           </div>

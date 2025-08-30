@@ -20,7 +20,7 @@ export default function OurTeamPage() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="flex items-center bg-gradient-to-r from-fuchsia-50 to-purple-50 p-4 rounded-lg border border-fuchsia-200">
-                <img src="/members/victoria.avif" alt="Victoria photo" className="w-20 h-20 rounded-full mr-4 object-cover" />
+                <img src="/team-members/victoria.avif" alt="Victoria photo" className="w-20 h-20 rounded-full mr-4 object-cover" />
                 <div>
                   <h3 className="font-bold text-lg">Victoria</h3>
                   <p className="text-sm text-fuchsia-600 font-semibold">Co-Chair</p>
@@ -28,7 +28,7 @@ export default function OurTeamPage() {
               </div>
               
               <div className="flex items-center bg-gradient-to-r from-fuchsia-50 to-purple-50 p-4 rounded-lg border border-fuchsia-200">
-                <img src="/members/cheryl.avif" alt="Cheryl photo" className="w-20 h-20 rounded-full mr-4 object-cover" />
+                <img src="/team-members/cheryl.avif" alt="Cheryl photo" className="w-20 h-20 rounded-full mr-4 object-cover" />
                 <div>
                   <h3 className="font-bold text-lg">Cheryl</h3>
                   <p className="text-sm text-fuchsia-600 font-semibold">Co-Chair</p>
@@ -36,7 +36,7 @@ export default function OurTeamPage() {
               </div>
               
               <div className="flex items-center bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg border border-blue-200">
-                <img src="/members/carmen.avif" alt="Carmen photo" className="w-20 h-20 rounded-full mr-4 object-cover" />
+                <img src="/team-members/carmen.avif" alt="Carmen photo" className="w-20 h-20 rounded-full mr-4 object-cover" />
                 <div>
                   <h3 className="font-bold text-lg">Carmen</h3>
                   <p className="text-sm text-blue-600 font-semibold">Secretary</p>
@@ -44,7 +44,7 @@ export default function OurTeamPage() {
               </div>
               
               <div className="flex items-center bg-gradient-to-r from-emerald-50 to-green-50 p-4 rounded-lg border border-emerald-200">
-                <img src="/members/daniel.avif" alt="Daniel photo" className="w-20 h-20 rounded-full mr-4 object-cover" />
+                <img src="/team-members/daniel.avif" alt="Daniel photo" className="w-20 h-20 rounded-full mr-4 object-cover" />
                 <div>
                   <h3 className="font-bold text-lg">Daniel</h3>
                   <p className="text-sm text-emerald-600 font-semibold">Treasurer</p>
@@ -52,7 +52,7 @@ export default function OurTeamPage() {
               </div>
               
               <div className="flex items-center bg-gradient-to-r from-gray-50 to-slate-50 p-4 rounded-lg border border-gray-200">
-                <img src="/members/tom.avif" alt="Tom photo" className="w-20 h-20 rounded-full mr-4 object-cover" />
+                <img src="/team-members/tom.avif" alt="Tom photo" className="w-20 h-20 rounded-full mr-4 object-cover" />
                 <div>
                   <h3 className="font-bold text-lg">Tom</h3>
                   <p className="text-sm text-gray-600 font-semibold">Board Member</p>

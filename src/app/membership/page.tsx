@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import Layout from '@/components/layout/Layout';
 import MembershipSection from '@/components/sections/MembershipSection';
 
@@ -14,7 +15,9 @@ export default function Membership() {
           </div>
         </div>
         <div className="max-w-6xl mx-auto px-6 py-12">
-          <MembershipSection isActive={true} />
+          <Suspense fallback={<div className="text-center py-8">Loading membership information...</div>}>
+            <MembershipSection isActive={true} />
+          </Suspense>
         </div>
       </div>
     </Layout>
