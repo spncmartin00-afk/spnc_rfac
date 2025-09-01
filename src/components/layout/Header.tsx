@@ -12,11 +12,6 @@ export default function Header() {
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const pathname = usePathname();
 
-
-
-
-
-
   const isActive = (href: string) => {
     if (href === '/' && pathname === '/') return true;
     if (href !== '/' && pathname.startsWith(href)) return true;

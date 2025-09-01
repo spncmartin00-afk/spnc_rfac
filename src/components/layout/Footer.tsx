@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 export default function Footer() {
   const [formData, setFormData] = useState({
@@ -83,6 +83,9 @@ export default function Footer() {
                 </a>
                 <a href="https://www.instagram.com/spnc.rfac" className="text-gray-400 hover:text-fuchsia-400" aria-label="Instagram">
                   <FontAwesomeIcon icon={faInstagram} className="text-lg" />
+                </a>
+                <a href="https://www.linkedin.com/in/spnc-rfac/" className="text-gray-400 hover:text-fuchsia-400" aria-label="LinkedIn">
+                  <FontAwesomeIcon icon={faLinkedinIn} className="text-lg" />
                 </a>
               </div>
             </div>
