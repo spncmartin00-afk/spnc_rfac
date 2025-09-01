@@ -130,6 +130,19 @@ export default function Footer() {
                     Land Acknowledgement
                   </Link>
                 </li>
+                <li className="mt-2">
+                  <Link 
+                    href="/about/policies/land-acknowledgement" 
+                    prefetch={true}
+                    className="inline-block hover:opacity-80 transition-opacity"
+                  >
+                    <img 
+                      src="/feather.webp" 
+                      alt="Rainbow feather symbolizing diversity and inclusion" 
+                      className="h-12 w-auto"
+                    />
+                  </Link>
+                </li>
               </ul>
             </div>
 
