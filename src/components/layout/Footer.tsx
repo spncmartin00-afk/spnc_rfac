@@ -118,7 +118,7 @@ export default function Footer() {
                     prefetch={true}
                     className="hover:underline"
                   >
-                    Accessibility Statement
+                    Accessibility Policy
                   </Link>
                 </li>
                 <li>
