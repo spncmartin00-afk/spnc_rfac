@@ -9,6 +9,7 @@ import { faHeart, faBars } from '@fortawesome/free-solid-svg-icons';
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<'en' | 'fr'>('en');
+  const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
   const pathname = usePathname();
 
 
@@ -38,16 +39,71 @@ export default function Header() {
         </Link>
 
         <div className="hidden lg:flex items-center space-x-4">
-          {/* About Us Link */}
-          <Link
-            href="/about"
-            prefetch={true}
-            className={`nav-link border-b-2 border-transparent pb-1 hover:text-fuchsia-600 font-semibold ${
-              isActive('/about') ? 'active' : ''
-            }`}
+          {/* About Us Dropdown */}
+          <div className="relative"
+            onMouseEnter={() => setIsAboutDropdownOpen(true)}
+            onMouseLeave={() => setIsAboutDropdownOpen(false)}
           >
-            About Us
-          </Link>
+            <button
+              className={`nav-link border-b-2 border-transparent pb-1 hover:text-fuchsia-600 font-semibold flex items-center space-x-1 ${
+                isActive('/about') ? 'active' : ''
+              }`}
+              aria-expanded={isAboutDropdownOpen}
+              aria-haspopup="true"
+            >
+              <span>About Us</span>
+              <svg 
+                className={`w-4 h-4 transition-transform duration-200 ${isAboutDropdownOpen ? 'rotate-180' : ''}`}
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* Dropdown Menu */}
+            {isAboutDropdownOpen && (
+              <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                <Link
+                  href="/about/our-story"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  Our Story
+                </Link>
+                <Link
+                  href="/about/our-mandate"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  Our Mandate
+                </Link>
+                <Link
+                  href="/about/mission-vision-values"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  Mission, Vision & Values
+                </Link>
+                <Link
+                  href="/about/our-team"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  Our Team
+                </Link>
+                <Link
+                  href="/about/communications"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  Communications
+                </Link>
+                <Link
+                  href="/about/policies"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  Policies
+                </Link>
+              </div>
+            )}
+          </div>
 
           {/* Membership Link */}
           <Link
@@ -157,17 +213,73 @@ export default function Header() {
 
       {isMobileMenuOpen && (
         <div className="lg:hidden px-6 pb-4 space-y-2 text-center">
-          {/* Mobile About Us Link */}
-          <Link
-            href="/about"
-            prefetch={true}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className={`block nav-link w-full text-center py-2 hover:text-fuchsia-600 font-semibold ${
-              isActive('/about') ? 'active' : ''
-            }`}
-          >
-            About Us
-          </Link>
+          {/* Mobile About Us Dropdown */}
+          <div className="space-y-2">
+            <button
+              onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
+              className={`block nav-link w-full text-center py-2 hover:text-fuchsia-600 font-semibold flex items-center justify-center space-x-1 ${
+                isActive('/about') ? 'active' : ''
+              }`}
+            >
+              <span>About Us</span>
+              <svg 
+                className={`w-4 h-4 transition-transform duration-200 ${isAboutDropdownOpen ? 'rotate-180' : ''}`}
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* Mobile Dropdown Items */}
+            {isAboutDropdownOpen && (
+              <div className="bg-gray-50 rounded-lg py-2 space-y-1">
+                <Link
+                  href="/about/our-story"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  Our Story
+                </Link>
+                <Link
+                  href="/about/our-mandate"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  Our Mandate
+                </Link>
+                <Link
+                  href="/about/mission-vision-values"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  Mission, Vision & Values
+                </Link>
+                <Link
+                  href="/about/our-team"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  Our Team
+                </Link>
+                <Link
+                  href="/about/communications"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  Communications
+                </Link>
+                <Link
+                  href="/about/policies"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  Policies
+                </Link>
+              </div>
+            )}
+          </div>
 
           {/* Mobile Membership Link */}
           <Link

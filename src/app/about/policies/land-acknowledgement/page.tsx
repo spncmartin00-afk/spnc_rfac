@@ -12,7 +12,17 @@ export default function LandAcknowledgement() {
             </p>
           </div>
         </div>
-        <div className="max-w-4xl mx-auto px-6 py-12">
+        
+        {/* Decorative feather image */}
+        <div className="flex justify-center mt-4 mb-8 relative z-10">
+          <img 
+            src="/feather.webp" 
+            alt="Rainbow feather symbolizing diversity and pride" 
+            className="w-96 h-auto opacity-90"
+          />
+        </div>
+
+        <div className="max-w-4xl mx-auto px-6 py-6">
           <div className="bg-white rounded-lg shadow-sm p-8">
             <div className="prose max-w-none">
               <p className="text-sm text-gray-600 mb-6">Effective Date: June 26, 2025</p>
