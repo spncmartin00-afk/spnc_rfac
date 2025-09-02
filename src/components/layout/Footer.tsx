@@ -157,8 +157,8 @@ export default function Footer() {
 
             {/* Newsletter */}
             <div className="lg:w-1/4 pl-5 pr-8">  
-            <h3 className="font-bold text-white mb-4">Newsletter</h3>
-            <p className="text-sm mb-3">Stay up-to-date with our latest news and resources.</p>
+            <h3 className="font-bold text-white mb-4">Want to stay informed?</h3>
+            <p className="text-sm mb-3">Sign up below for newsletters, event updates, news, volunteer opportunities, and more.</p>
             {isSubscribed ? (
               <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
                 <p className="text-sm font-semibold">✓ Successfully subscribed!</p>
@@ -173,16 +173,36 @@ export default function Footer() {
             ) : (
               <form onSubmit={handleSubmit} className="space-y-3">
                 <div className="grid grid-cols-2 gap-2">
+                  <input
+                    type="text"
+                    name="firstName"
+                    placeholder="First Name"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    required
+                    disabled={isSubmitting}
+                    className="p-2 bg-white text-gray-900 rounded-lg text-sm border-0 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 disabled:opacity-50"
+                  />
+                  <input
+                    type="text"
+                    name="lastName"
+                    placeholder="Last Name"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    required
+                    disabled={isSubmitting}
+                    className="p-2 bg-white text-gray-900 rounded-lg text-sm border-0 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 disabled:opacity-50"
+                  />
                 </div>
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   name="email"
-                  placeholder="Email" 
+                  placeholder="Email"
                   value={formData.email}
                   onChange={handleInputChange}
                   required
                   disabled={isSubmitting}
-                  className="p-2 w-full bg-white text-gray-900 rounded-lg text-sm border-0 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 disabled:opacity-50" 
+                  className="p-2 w-full bg-white text-gray-900 rounded-lg text-sm border-0 focus:outline-none focus:ring-2 focus:ring-fuchsia-500 disabled:opacity-50"
                 />
                 <label className="flex items-start gap-2 text-xs">
                   <input 
@@ -199,9 +219,9 @@ export default function Footer() {
                 {showPolicyError && (
                   <p className="text-red-500 text-xs mt-1">Please agree to the Privacy Policy to continue.</p>
                 )}
-                <button 
-                  type="submit" 
-                  disabled={isSubmitting || !formData.email || !formData.agreeToPolicy}
+                <button
+                  type="submit"
+                  disabled={isSubmitting || !formData.firstName || !formData.lastName || !formData.email || !formData.agreeToPolicy}
                   className="bg-fuchsia-600 text-white p-2 w-full rounded-lg hover:bg-fuchsia-700 text-sm font-semibold flex items-center justify-center"
                 >
                   {isSubmitting ? (

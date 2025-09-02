@@ -98,9 +98,37 @@ export default function Communications() {
           <div className="bg-white p-6 rounded-lg border">
             <p className="text-gray-600 mb-4">Stay updated with our latest news, events, and community stories.</p>
             <form className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="first-name" className="block text-sm font-medium text-gray-700 mb-1">
+                    First Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    name="firstName"
+                    required
+                    className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+                    placeholder="First Name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="last-name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Last Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="last-name"
+                    name="lastName"
+                    required
+                    className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+                    placeholder="Last Name"
+                  />
+                </div>
+              </div>
               <div>
                 <label htmlFor="newsletter-email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Email
+                  Email *
                 </label>
                 <input
                   type="email"
