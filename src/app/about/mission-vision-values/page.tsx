@@ -34,6 +34,53 @@ export default function MissionVisionValuesPage() {
                 We strive to influence all policies in order to enact systemic, legislative, and other reforms that benefit the older 2SLGBTQI+ communities.
               </p>
             </div>
+            <div>
+              <h3 className="text-2xl font-bold text-fuchsia-600 mb-4">Values</h3>
+              <div className="space-y-6">
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Reconciliation</h4>
+                  <p className="text-gray-700">
+                    Acknowledging historical and ongoing oppression of Indigenous 2SLGBTQI+ Elders and building respectful relationships through listening, learning, and collaboration to support healing and reconciliation.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Inclusivity</h4>
+                  <p className="text-gray-700">
+                    Embracing and celebrating the diversity of older 2SLGBTQI+ individuals.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Collaboration</h4>
+                  <p className="text-gray-700">
+                    Fostering collaboration and partnership among non-profit organizations, formal and informal groups, projects, and individuals working directly with older 2SLGBTQI+ people.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Advocacy</h4>
+                  <p className="text-gray-700">
+                    Commitment to advocating for systemic, social, and legislative changes that protect and advance the rights of older 2SLGBTQI+ individuals across Canada.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Empowerment</h4>
+                  <p className="text-gray-700">
+                    Empowering older 2SLGBTQI+ individuals to become self-advocates, enabling them to assert their rights, needs, visibility, and aspirations and promoting positive change within their communities.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Respect</h4>
+                  <p className="text-gray-700">
+                    Respecting the lives, the intersectionality of communities, and identities of older 2SLGBTQI+ people, affirming their voices, and creating an environment where they live with pride, free from fear and discrimination.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-lg font-semibold text-gray-800 mb-2">Transparency</h4>
+                  <p className="text-gray-700">
+                    Commitment to open communication, transparency in decision-making processes, and accountability to communities.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
