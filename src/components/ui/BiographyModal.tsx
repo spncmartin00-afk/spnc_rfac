@@ -54,6 +54,7 @@ export default function BiographyModal({ isOpen, onClose, boardMember }: Biograp
             />
             <div>
               <h2 className="text-2xl font-bold text-gray-800">{boardMember.name}</h2>
+              <p className="text-sm text-gray-600 mb-1">{boardMember.pronouns}</p>
               <p className={`text-lg font-semibold ${boardMember.gradientColors.text}`}>{boardMember.role}</p>
             </div>
             {/* Close button */}

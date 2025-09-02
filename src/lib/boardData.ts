@@ -2,6 +2,7 @@ export interface BoardMember {
   id: number;
   name: string;
   role: string;
+  pronouns: string;
   image: string;
   biography: string;
   gradientColors: {
@@ -17,6 +18,7 @@ export const boardMembers: BoardMember[] = [
     id: 1,
     name: 'Victoria',
     role: 'Co-Chair',
+    pronouns: 'she/her',
     image: '/team-members/victoria.avif',
     biography: `Victoria brings an academic life sciences background (Ph.D., Biology) and computer programming expertise to her advocacy work. Her core skills include scholarship; critical thinking; leadership; teamwork; mentoring and educational outreach.
 
@@ -38,6 +40,7 @@ export const boardMembers: BoardMember[] = [
     id: 2,
     name: 'Cheryl',
     role: 'Co-Chair',
+    pronouns: 'she/her',
     image: '/team-members/cheryl.avif',
     biography: [
       [
@@ -59,6 +62,7 @@ export const boardMembers: BoardMember[] = [
     id: 3,
     name: 'Carmen',
     role: 'Secretary',
+    pronouns: 'she/her',
     image: '/team-members/carmen.avif',
     biography: 'Carmen brings 30 years of experience in local, provincial, and national LGBTQ activism. With expertise in strategic planning, she recognizes the important role of Senior Pride Network Canada among national LGBTQ organizations. Carmen believes she functions well on a board of directors and seeks to age with dignity after years of activism. Residing in Ottawa, she possesses valuable knowledge of federal political processes.',
     gradientColors: {
@@ -72,6 +76,7 @@ export const boardMembers: BoardMember[] = [
     id: 4,
     name: 'Daniel',
     role: 'Treasurer',
+    pronouns: 'he/him',
     image: '/team-members/daniel.avif',
     biography: `Daniel, based in Halifax, is passionate about improving the lives of 2SLGBTQI+ seniors, believing a national organization can offer valuable support and solutions. His dedication to the community spans four decades, notably as publisher of Waves Magazine, Atlantic Canada's LGBT publication, for 40 years. For 20 years, he has also published the Halifax Rainbow Encyclopedia, a comprehensive resource documenting queer life in Halifax.
                 
@@ -87,6 +92,7 @@ export const boardMembers: BoardMember[] = [
     id: 5,
     name: 'Tom',
     role: 'Board Member',
+    pronouns: 'he/him',
     image: '/team-members/tom.avif',
     biography: `Tom Warner (he/him) has been an activist and advocate for 2SLGBTQI+ rights for over 50 years. In 1971, he helped found the Gay Students’ Alliance at the University of Saskatchewan and the Zodiac Friendship Society, the first gay community organization that later became the Gay Community Centre of Saskatoon. After moving to Toronto in 1973, he helped to found and was active for several years in the Gay Alliance Toward Equality, including serving as president.
 
@@ -102,19 +108,18 @@ export const boardMembers: BoardMember[] = [
       text: 'text-gray-600'
     }
   },
-  {
-    id: 6,
-    name: 'Ada',
-    role: 'Board Member',
-    image: 'https://placehold.co/80x80/6B7280/FFFFFF?text=A',
-    biography: 'Ada is a passionate advocate for 2SLGBTQI+ rights with a particular focus on intersectional issues affecting seniors of color and immigrant communities. She brings valuable perspective on diversity, equity, and inclusion initiatives. With a background in social services and community development, Ada helps ensure our programs are culturally responsive and accessible to all members of our diverse community.',
-    gradientColors: {
-      from: 'from-gray-50',
-      to: 'to-slate-50',
-      border: 'border-gray-200',
-      text: 'text-gray-600'
-    }
-  }
+  // {
+  //   id: 6,
+  //   name: 'Ada',
+  //   role: 'Board Member',
+  //   image: 'https://placehold.co/80x80/6B7280/FFFFFF?text=A',
+  //   biography: 'Ada is a passionate advocate for 2SLGBTQI+ rights with a particular focus on intersectional issues affecting seniors of color and immigrant communities. She brings valuable perspective on diversity, equity, and inclusion initiatives. With a background in social services and community development, Ada helps ensure our programs are culturally responsive and accessible to all members of our diverse community.',
+  //   gradientColors: {
+  //     from: 'from-gray-50',
+  //     to: 'to-slate-50',
+  //     border: 'border-gray-200',
+  //     text: 'text-gray-600'
+  //   }
 ];
 
 export const getBoardMemberById = (id: number): BoardMember | undefined => {
@@ -125,6 +130,7 @@ export interface StaffMember {
   id: number;
   name: string;
   role: string;
+  pronouns: string;
   image: string;
   biography: string;
   gradientColors: {
@@ -140,6 +146,7 @@ export const staffMembers: StaffMember[] = [
     id: 1,
     name: 'Martin',
     role: 'Coordinator',
+    pronouns: 'he/him',
     image: '/team-members/martin.avif',
     biography: `Martin Krajcik (he/him/his) is a passionate advocate dedicated to improving the lives of 2SLGBTQI+ (Two-Spirit, Lesbian, Gay, Bisexual, Trans, Queer, Questioning, Intersex and others) older adults. As the coordinator of SPNC/RFAC, a national organization focused on queer aging, Martin brings his expertise and commitment to identifying and addressing the unique challenges faced by this community.
 

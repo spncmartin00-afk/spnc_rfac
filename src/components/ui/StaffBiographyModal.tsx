@@ -54,6 +54,7 @@ export default function StaffBiographyModal({ isOpen, onClose, staffMember }: St
             />
             <div>
               <h2 className="text-2xl font-bold text-gray-800">{staffMember.name}</h2>
+              <p className="text-sm text-gray-600 mb-1">{staffMember.pronouns}</p>
               <p className={`text-lg font-semibold ${staffMember.gradientColors.text}`}>{staffMember.role}</p>
             </div>
             {/* Close button */}

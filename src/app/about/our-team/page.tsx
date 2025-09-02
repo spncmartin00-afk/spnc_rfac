@@ -67,13 +67,14 @@ export default function OurTeamPage() {
                   role="button"
                   aria-label={`View biography of ${member.name}, ${member.role}`}
                 >
-                  <img 
-                    src={member.image} 
+                  <img
+                    src={member.image}
                     alt={`Professional headshot of ${member.name}`}
-                    className="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-4 border-white shadow-lg" 
+                    className="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-4 border-white shadow-lg"
                   />
                   <div>
                     <h3 className="font-bold text-xl mb-2 text-gray-800">{member.name}</h3>
+                    <p className="text-sm text-gray-600 mb-1">{member.pronouns}</p>
                     <p className={`text-base ${member.gradientColors.text} font-semibold mb-2`}>{member.role}</p>
                     <div className="flex items-center justify-center text-xs text-gray-600 mt-3">
                       <svg className="mr-1 w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -133,7 +134,7 @@ export default function OurTeamPage() {
             <h2 className="text-3xl font-bold mb-6">Our Staff and Volunteers</h2>
             <p className="text-gray-600 mb-8">Our dedicated team works tirelessly to support our community and advance our mission.</p>
             
-            <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {staffMembers.map((member) => (
                 <div 
                   key={member.id}
@@ -149,13 +150,14 @@ export default function OurTeamPage() {
                   role="button"
                   aria-label={`View biography of ${member.name}, ${member.role}`}
                 >
-                  <img 
-                    src={member.image} 
+                  <img
+                    src={member.image}
                     alt={`Professional headshot of ${member.name}`}
-                    className="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-4 border-white shadow-lg" 
+                    className="w-32 h-32 mx-auto rounded-full mb-4 object-cover border-4 border-white shadow-lg"
                   />
                   <div>
                     <h3 className="font-bold text-xl mb-2 text-gray-800">{member.name}</h3>
+                    <p className="text-sm text-gray-600 mb-1">{member.pronouns}</p>
                     <p className={`text-base ${member.gradientColors.text} font-semibold mb-2`}>{member.role}</p>
                     <p className="text-gray-600 text-sm mb-3">Leading our day-to-day operations and coordinating programs to serve the 2SLGBTQI+ senior community.</p>
                     <div className="flex items-center justify-center text-xs text-gray-600 mt-3">
