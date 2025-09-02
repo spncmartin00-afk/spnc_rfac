@@ -41,14 +41,28 @@ export default function Footer() {
     setShowPolicyError(false);
     setIsSubmitting(true);
     
-    // Simulate API call
     try {
-      await new Promise(resolve => setTimeout(resolve, 500)); // Simulate network delay
-      console.log('Newsletter signup:', formData);
-      setIsSubscribed(true);
-      setFormData({ firstName: '', lastName: '', email: '', agreeToPolicy: false });
+      const response = await fetch('/api/newsletter-subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        setIsSubscribed(true);
+        setFormData({ firstName: '', lastName: '', email: '', agreeToPolicy: false });
+      } else {
+        console.error('Subscription failed:', result.error);
+        // TODO: Show error message to user
+        alert('Subscription failed. Please try again.');
+      }
     } catch (error) {
       console.error('Subscription failed:', error);
+      alert('Subscription failed. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
