@@ -10,6 +10,10 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [language, setLanguage] = useState<'en' | 'fr'>('en');
   const [isAboutDropdownOpen, setIsAboutDropdownOpen] = useState(false);
+  const [isResourcesDropdownOpen, setIsResourcesDropdownOpen] = useState(false);
+  const [isTrainingDropdownOpen, setIsTrainingDropdownOpen] = useState(false);
+  const [isMobileResourcesOpen, setIsMobileResourcesOpen] = useState(false);
+  const [isMobileTrainingOpen, setIsMobileTrainingOpen] = useState(false);
   const pathname = usePathname();
 
   const isActive = (href: string) => {
@@ -112,27 +116,107 @@ export default function Header() {
           </Link>
 
 
-          {/* Resources Link */}
-          <Link
-            href="/resources"
-            prefetch={true}
-            className={`nav-link border-b-2 border-transparent pb-1 hover:text-fuchsia-600 font-semibold ${
-              isActive('/resources') ? 'active' : ''
-            }`}
+          {/* Resources Dropdown */}
+          <div className="relative"
+            onMouseEnter={() => setIsResourcesDropdownOpen(true)}
+            onMouseLeave={() => setIsResourcesDropdownOpen(false)}
           >
-            Resources
-          </Link>
+            <button
+              className={`nav-link border-b-2 border-transparent pb-1 hover:text-fuchsia-600 font-semibold flex items-center space-x-1 ${
+                isActive('/resources') ? 'active' : ''
+              }`}
+              aria-expanded={isResourcesDropdownOpen}
+              aria-haspopup="true"
+            >
+              <span>Resources</span>
+              <svg 
+                className={`w-4 h-4 transition-transform duration-200 ${isResourcesDropdownOpen ? 'rotate-180' : ''}`}
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* Dropdown Menu */}
+            {isResourcesDropdownOpen && (
+              <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                <Link
+                  href="/resources/allied"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  Organizations & Groups
+                </Link>
+                <Link
+                  href="/resources/frontline"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  Social Services, Healthcare & Government
+                </Link>
+                <Link
+                  href="/resources/seniors"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  2SLGBTQI+ Older People
+                </Link>
+                <Link
+                  href="/resources/community-map"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  Community Map
+                </Link>
+              </div>
+            )}
+          </div>
 
-          {/* Training Link */}
-          <Link
-            href="/training"
-            prefetch={true}
-            className={`nav-link border-b-2 border-transparent pb-1 hover:text-fuchsia-600 font-semibold ${
-              isActive('/training') ? 'active' : ''
-            }`}
+          {/* Training Dropdown */}
+          <div className="relative"
+            onMouseEnter={() => setIsTrainingDropdownOpen(true)}
+            onMouseLeave={() => setIsTrainingDropdownOpen(false)}
           >
-            Training
-          </Link>
+            <button
+              className={`nav-link border-b-2 border-transparent pb-1 hover:text-fuchsia-600 font-semibold flex items-center space-x-1 ${
+                isActive('/training') ? 'active' : ''
+              }`}
+              aria-expanded={isTrainingDropdownOpen}
+              aria-haspopup="true"
+            >
+              <span>Training</span>
+              <svg 
+                className={`w-4 h-4 transition-transform duration-200 ${isTrainingDropdownOpen ? 'rotate-180' : ''}`}
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* Dropdown Menu */}
+            {isTrainingDropdownOpen && (
+              <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-xl border border-gray-200 py-2 z-50">
+                <Link
+                  href="/training/services-overview"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  Services Overview
+                </Link>
+                <Link
+                  href="/training/workshops"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  Workshops
+                </Link>
+                <Link
+                  href="/training/consulting"
+                  className="block px-4 py-2 text-gray-700 hover:bg-fuchsia-50 hover:text-fuchsia-600 transition-colors"
+                >
+                  Consulting
+                </Link>
+              </div>
+            )}
+          </div>
 
           <Link
             href="/contact"
@@ -289,29 +373,106 @@ export default function Header() {
           </Link>
           
 
-          {/* Mobile Resources Link */}
-          <Link
-            href="/resources"
-            prefetch={true}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className={`block nav-link w-full text-center py-2 hover:text-fuchsia-600 font-semibold ${
-              isActive('/resources') ? 'active' : ''
-            }`}
-          >
-            Resources
-          </Link>
+          {/* Mobile Resources Dropdown */}
+          <div className="space-y-2">
+            <button
+              onClick={() => setIsMobileResourcesOpen(!isMobileResourcesOpen)}
+              className={`block nav-link w-full text-center py-2 hover:text-fuchsia-600 font-semibold flex items-center justify-center space-x-1 ${
+                isActive('/resources') ? 'active' : ''
+              }`}
+            >
+              <span>Resources</span>
+              <svg 
+                className={`w-4 h-4 transition-transform duration-200 ${isMobileResourcesOpen ? 'rotate-180' : ''}`}
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* Mobile Resources Dropdown Items */}
+            {isMobileResourcesOpen && (
+              <div className="bg-gray-50 rounded-lg py-2 space-y-1">
+                <Link
+                  href="/resources/allied"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  Organizations & Groups
+                </Link>
+                <Link
+                  href="/resources/frontline"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  Social Services, Healthcare & Government
+                </Link>
+                <Link
+                  href="/resources/seniors"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  2SLGBTQI+ Older People
+                </Link>
+                <Link
+                  href="/resources/community-map"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  Community Map
+                </Link>
+              </div>
+            )}
+          </div>
 
-          {/* Mobile Training Link */}
-          <Link
-            href="/training"
-            prefetch={true}
-            onClick={() => setIsMobileMenuOpen(false)}
-            className={`block nav-link w-full text-center py-2 hover:text-fuchsia-600 font-semibold ${
-              isActive('/training') ? 'active' : ''
-            }`}
-          >
-            Training
-          </Link>
+          {/* Mobile Training Dropdown */}
+          <div className="space-y-2">
+            <button
+              onClick={() => setIsMobileTrainingOpen(!isMobileTrainingOpen)}
+              className={`block nav-link w-full text-center py-2 hover:text-fuchsia-600 font-semibold flex items-center justify-center space-x-1 ${
+                isActive('/training') ? 'active' : ''
+              }`}
+            >
+              <span>Training</span>
+              <svg 
+                className={`w-4 h-4 transition-transform duration-200 ${isMobileTrainingOpen ? 'rotate-180' : ''}`}
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* Mobile Training Dropdown Items */}
+            {isMobileTrainingOpen && (
+              <div className="bg-gray-50 rounded-lg py-2 space-y-1">
+                <Link
+                  href="/training/services-overview"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  Services Overview
+                </Link>
+                <Link
+                  href="/training/workshops"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  Workshops
+                </Link>
+                <Link
+                  href="/training/consulting"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block py-2 px-4 text-gray-700 hover:text-fuchsia-600 transition-colors"
+                >
+                  Consulting
+                </Link>
+              </div>
+            )}
+          </div>
 
           <Link
             href="/contact"

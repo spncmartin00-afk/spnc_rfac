@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "../lib/fontawesome";
 import { Analytics } from "@vercel/analytics/next";
+import CookieConsent from "@/components/CookieConsent";
 
 export const metadata: Metadata = {
   title: "Senior Pride Network Canada | National 2SLGBTQI+ Seniors Hub",
@@ -17,6 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased text-gray-800">
         {children}
+        <CookieConsent />
         <Analytics />
       </body>
     </html>
