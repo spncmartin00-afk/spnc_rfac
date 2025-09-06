@@ -80,13 +80,20 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
 
       {/* Path Cards */}
       <div className="mt-8">
-        <h2 className="text-3xl font-bold text-center mb-8">We have resources for</h2>
+        <div className="w-full bg-fuchsia-100 py-4 mb-8">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center text-fuchsia-800">We have resources for</h2>
+          </div>
+        </div>
         <div className="grid md:grid-cols-3 gap-8">
           <Link href="/resources/allied" className="path-card card bg-white p-8 rounded-2xl text-center cursor-pointer hover:shadow-lg transition-shadow duration-200 block">
             <div className="mb-4 flex justify-center">
               <Users className="w-12 h-12 icon-gradient" />
             </div>
             <h3 className="text-2xl font-bold mb-2">Organizations & Groups</h3>
+            <div className="text-gray-700 text-base mb-2">
+              Practical tools, templates, and a national peer network
+            </div>
             <span className="mt-4 text-fuchsia-600 font-semibold hover:text-fuchsia-800 cursor-pointer inline-block">
               Explore Resources →
             </span>
@@ -96,6 +103,9 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
               <HandHeart className="w-12 h-12 icon-gradient" />
             </div>
             <h3 className="text-2xl font-bold mb-2">Social Services, Healthcare & Government</h3>
+            <div className="text-gray-700 text-base mb-2">
+              Evidence-informed guidance and training to strengthen inclusive care
+            </div>
             <span className="mt-4 text-fuchsia-600 font-semibold hover:text-fuchsia-800 cursor-pointer inline-block">
               Explore Resources →
             </span>
@@ -105,6 +115,9 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
               <Rainbow className="w-12 h-12 icon-gradient" />
             </div>
             <h3 className="text-2xl font-bold mb-2">2SLGBTQI+ Older People</h3>
+            <div className="text-gray-700 text-base mb-2">
+              Find affirming services, programs, and communities near you
+            </div>
             <span className="mt-4 text-fuchsia-600 font-semibold hover:text-fuchsia-800 cursor-pointer inline-block">
               Explore Resources →
             </span>
@@ -114,9 +127,13 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
 
       {/* Latest Updates */}
       <section className="mt-16">
-        <h2 className="text-3xl font-bold text-center mb-2">Latest Updates</h2>
+        <div className="w-full bg-blue-100 py-4 mb-8">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center text-blue-800">Latest Updates</h2>
+          </div>
+        </div>
         <p className="text-gray-600 text-center max-w-3xl mx-auto mb-8">
-          Stay informed about the policies and initiatives shaping the future of 2SLGBTQI+ seniors in Canada.
+            Stay informed about the policies and initiatives shaping the future of 2SLGBTQI+ seniors in Canada.
         </p>
         
         <div className="grid md:grid-cols-3 gap-6">
@@ -134,7 +151,7 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
                     href={`/articles/${article.slug.current}`}
                     className={`mt-4 ${colors.button} ${colors.buttonHover} text-white font-semibold py-2.5 px-5 rounded-lg self-start inline-block text-center`}
                   >
-                    Explore resource
+                    → Read the {getCategoryLabel(article.category).toLowerCase()}
                   </Link>
                 </div>
               );
@@ -146,19 +163,19 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
                 <span className="text-sm font-bold text-fuchsia-600 bg-fuchsia-100 py-1 px-2 rounded self-start">Open Letter</span>
                 <h3 className="text-xl font-bold mt-3">Open Letter to Prime Minister Carney — Supporting 2SLGBTQI+ Seniors.</h3>
                 <p className="text-gray-600 text-sm mt-2 flex-1">Our call to prioritize dignity, safety, and inclusion for older 2SLGBTQI+ people across Canada.</p>
-                <button className="mt-4 bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold py-2.5 px-5 rounded-lg self-start">Explore resource</button>
+                <button className="mt-4 bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold py-2.5 px-5 rounded-lg self-start">→ Read the open letter</button>
               </div>
               <div className="bg-white p-6 rounded-2xl shadow-sm flex flex-col">
                 <span className="text-sm font-bold text-blue-600 bg-blue-100 py-1 px-2 rounded self-start">Statement</span>
                 <h3 className="text-xl font-bold mt-3">Our Statement for the 2025 Federal Election: A call for an inclusive future for older adults.</h3>
                 <p className="text-gray-600 text-sm mt-2 flex-1">Key priorities to ensure equitable access, safety, and respect for 2SLGBTQI+ elders.</p>
-                <button className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-5 rounded-lg self-start">Explore resource</button>
+                <button className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 px-5 rounded-lg self-start">→ Read the statement</button>
               </div>
               <div className="bg-white p-6 rounded-2xl shadow-sm flex flex-col">
                 <span className="text-sm font-bold text-emerald-600 bg-emerald-100 py-1 px-2 rounded self-start">Position Paper</span>
                 <h3 className="text-xl font-bold mt-3">SPNC/RFAC Position Paper: Supporting 2SLGBTQI+ Seniors in Canada — A Call to Action.</h3>
                 <p className="text-gray-600 text-sm mt-2 flex-1">Evidence-informed recommendations for governments and service providers.</p>
-                <button className="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-5 rounded-lg self-start">Explore resource</button>
+                <button className="mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 px-5 rounded-lg self-start">→ Read the position paper</button>
               </div>
             </>
           )}
@@ -167,10 +184,14 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
 
       {/* Members Carousel */}
       <div className="mt-16">
-        <h2 className="text-3xl font-bold text-center mb-2">Featured Members</h2>
+        <div className="w-full bg-emerald-100 py-4 mb-8">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center text-emerald-800">Featured Members</h2>
+          </div>
+        </div>
         <p className="text-gray-600 text-center max-w-3xl mx-auto mb-8">
           From coast to coast to coast, our members lead programs, build inclusive services, 
-          and create community for 2SLGBTQI+ elders—here are a few of their stories.
+          and create community for 2SLGBTQI+ elders.
         </p>
         
         <div className="carousel relative max-w-2xl mx-auto">
@@ -189,7 +210,7 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
                   />
                 </div>
                 <h3 className="text-2xl font-bold mb-2">{slide.name}</h3>
-                <p className="text-gray-600">{slide.description}</p>
+                <p className="text-gray-600 text-sm">{slide.description}</p>
                 <button 
                   onClick={() => handleViewProfile(slide)}
                   className="mt-4 bg-fuchsia-600 text-white px-4 py-2 rounded-lg hover:bg-fuchsia-700 transition-colors font-semibold cursor-pointer"
@@ -232,9 +253,54 @@ export default function HomeSection({ isActive }: HomeSectionProps) {
             ))}
           </div>
         </div>
+        
+        {/* Discover All Members Button */}
+        <div className="text-center mt-8">
+          <Link
+            href="/membership"
+            className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 inline-block"
+          >
+            Discover All Members →
+          </Link>
+        </div>
       </div>
 
-      
+      {/* Our Supporters */}
+      <div className="mt-16">
+        <div className="w-full bg-purple-100 py-4 mb-8">
+          <div className="max-w-7xl mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center text-purple-800">Our Work is Made Possible By</h2>
+          </div>
+        </div>
+        <p className="text-gray-600 text-center max-w-3xl mx-auto mb-12">
+          We gratefully acknowledge the support that enables us to advance dignity and inclusion for 2SLGBTQI+ older people nationwide.
+        </p>
+
+        <div className="flex justify-center items-center gap-4 max-w-4xl mx-auto">
+          <div className="bg-white px-2 py-1 rounded shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200 flex items-center justify-center">
+            <img
+              src="/supporters/WAGE-FEGC-R-e.png"
+              alt="Women and Gender Equality Canada (WAGE)"
+              className="h-6 w-auto object-contain"
+            />
+          </div>
+          <div className="bg-white px-2 py-1 rounded shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200 flex items-center justify-center">
+            <img
+              src="/supporters/Logo_Funded_by_New_Horizons.png"
+              alt="New Horizons for Seniors Program"
+              className="h-6 w-auto object-contain"
+            />
+          </div>
+          <div className="bg-white px-2 py-1 rounded shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200 flex items-center justify-center">
+            <img
+              src="/supporters/Unifor_SJF_LOGO .png"
+              alt="Unifor"
+              className="h-6 w-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+
     </section>
   );
 }

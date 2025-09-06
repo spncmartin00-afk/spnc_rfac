@@ -5,8 +5,7 @@ export default function Hero() {
         Senior Pride Network Canada
       </h1>
       <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-        Connecting 2SLGBTQI+ older people and the organizations that serve them — 
-        so every elder can live with dignity, safety, and connection anywhere in Canada.
+        Connecting 2SLGBTQI+ older people and the organizations that serve them
       </p>
     </div>
   );
